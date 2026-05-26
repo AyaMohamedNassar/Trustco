@@ -195,7 +195,14 @@ img {
 .phone {
   left: 6rem;
 }
-
+@media (max-width: 767.98px) {
+  .whatsapp {
+    right: 1rem;
+  }
+  .phone {
+    left: 1rem;
+  }
+}
 .carousel-item {
   height: 75dvh;
 }
