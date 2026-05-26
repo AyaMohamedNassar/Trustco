@@ -233,6 +233,11 @@ img {
     1px 4px 4px 0px rgb(0 0 0 / 12%),
     0px 4px 14px 1px rgb(0 0 0 / 13%);
 }
+@media (max-width: 767.98px) {
+  .carousel-item .line {
+    padding: 1rem 0.5rem;
+  }
+}
 .carousel-item .carousel-caption {
   top: 50%;
   transform: translateY(-50%);
@@ -318,6 +323,13 @@ img {
     0px 4px 14px 1px rgb(0 0 0 / 13%),
     1px 4px 4px 0px rgb(0 0 0 / 12%);
   border: 1px solid var(--border-color);
+}
+@media (max-width: 767.98px) {
+  .carousel-control {
+    height: 30px;
+    width: 30px;
+    margin: auto 1rem;
+  }
 }
 .carousel-indicators {
   background-color: rgba(108, 108, 108, 0.3);
