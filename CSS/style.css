@@ -186,6 +186,7 @@ img {
     0px 4px 14px 1px rgb(0 0 0 / 13%),
     1px 4px 4px 0px rgb(0 0 0 / 12%);
 }
+
 .whatsapp {
   left: 0;
   right: 5rem;
@@ -195,19 +196,6 @@ img {
   left: 6rem;
 }
 
-@media (max-width: 575.98px) {
-  .contact {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
-  }
-  .whatsapp {
-    right: 1.5rem;
-  }
-  .phone {
-    left: 1.5rem;
-  }
-}
 .carousel-item {
   height: 75dvh;
 }
@@ -259,6 +247,11 @@ img {
     font-size: 1.5rem;
   }
 }
+@media (max-width: 599.98px) {
+  .carousel-item h5 {
+    font-size: 1.25rem;
+  }
+}
 .carousel-item p {
   font-weight: 500;
   width: 450px;
@@ -305,10 +298,12 @@ img {
 @media (max-width: 767.98px) {
   .hero-btn {
     font-size: 0.875rem;
+    margin: 1rem auto;
   }
 }
 .hero-btn .svg-inline--fa {
   margin-right: 0.25rem;
+  animation: bouncing-arrow 1.5s infinite;
 }
 .hero-btn:hover {
   box-shadow: 0 8px 24px rgba(249, 183, 31, 0.568);
@@ -534,4 +529,19 @@ footer .footer-gallery img {
   color: var(--primary-color);
   font-size: 16px;
   border-top: 1px solid var(--border-color);
+}
+@keyframes bouncing-arrow {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+
+  40%,
+  60% {
+    transform: translateX(-8px);
+  }
 }
