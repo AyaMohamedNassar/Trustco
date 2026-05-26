@@ -209,7 +209,13 @@ img {
   }
 }
 .carousel-item {
-  height: calc((100vh - 100px) * 0.8);
+  height: 75dvh;
+}
+
+@media (max-width: 767.98px) {
+  .carousel-item {
+    height: 60dvh;
+  }
 }
 .carousel-item .badge {
   background-color: var(--primary-color);
@@ -238,10 +244,31 @@ img {
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
+@media (max-width: 991.98px) {
+  .carousel-item h5 {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .carousel-item h5 {
+    font-size: 1.5rem;
+  }
+}
 .carousel-item p {
   font-weight: 500;
   width: 450px;
   margin: auto;
+}
+@media (max-width: 991.98px) {
+  .carousel-item p {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .carousel-item p {
+    width: 100%;
+    font-size: 0.75rem;
+  }
 }
 .carousel-item img {
   object-fit: cover;
@@ -264,6 +291,16 @@ img {
   box-shadow:
     1px 4px 4px 0px rgb(0 0 0 / 12%),
     0px 4px 14px 1px rgb(0 0 0 / 13%);
+}
+@media (max-width: 991.98px) {
+  .hero-btn {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-btn {
+    font-size: 0.875rem;
+  }
 }
 .hero-btn .svg-inline--fa {
   margin-right: 0.25rem;
@@ -288,23 +325,29 @@ img {
 .carousel-indicators button {
   background-color: rgb(249, 183, 31) !important;
 }
-
 .ticker-wrap {
   overflow: hidden;
   border-top: 0.5px solid var(--border-color);
   border-bottom: 0.5px solid var(--border-color);
   background-color: var(--bs-body-bg);
   padding: 13px 0;
+  /* Force LTR so translateX direction is predictable on all browsers */
+  direction: ltr;
 }
 
 .ticker-track {
   display: flex;
+  /* Let flexbox size itself naturally — no width: max-content needed with LTR fix */
   width: max-content;
-  animation: ticker-scroll 22s linear infinite both;
+  will-change: transform;
+  animation: ticker-scroll 25s linear infinite;
+  /* Ensure sub-pixel rendering is smooth on mobile */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
 
-  &:hover {
-    animation-play-state: paused;
-  }
+.ticker-track:hover {
+  animation-play-state: paused;
 }
 
 .ticker-item {
@@ -315,9 +358,9 @@ img {
   white-space: nowrap;
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em; /* reduced — large letter-spacing breaks Arabic */
   color: var(--text);
+  direction: rtl;
 }
 
 .ticker-dot {
@@ -330,10 +373,16 @@ img {
 
 @keyframes ticker-scroll {
   from {
-    transform: translateX(0);
+    transform: translateX(0) translateZ(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
   }
 }
 
