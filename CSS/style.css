@@ -795,6 +795,12 @@ img {
   background: var(--secondary-color);
   border-radius: 2px;
 }
+.why-choose-us .subtitle {
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
 .wcu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -865,6 +871,7 @@ img {
   color: var(--text-light);
   line-height: 1.7;
   margin: 0;
+  font-weight: 500;
 }
 .contact-us {
   background-color: var(--white);
@@ -882,6 +889,9 @@ img {
   font-weight: 700;
   color: var(--primary-color);
   margin: 0.4rem 0 0.5rem;
+}
+.contact-us .subtitle {
+  font-weight: 500;
 }
 .contact-cta-btn {
   display: inline-flex;
