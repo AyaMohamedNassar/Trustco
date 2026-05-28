@@ -13,6 +13,10 @@
   ];
 
   let active = 2;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
 
   function go(idx) {
     active = Math.max(0, Math.min(TOTAL - 1, idx));
@@ -68,6 +72,36 @@
     if (btnNext) btnNext.disabled = active === TOTAL - 1;
   }
 
+  function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }
+
+  function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  }
+
+  function handleSwipe() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const minSwipeDistance = 50;
+
+    // Only trigger if horizontal swipe is dominant
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (Math.abs(deltaX) > minSwipeDistance) {
+        if (deltaX > 0) {
+          // Swiped right (next card in RTL)
+          go(active - 1);
+        } else {
+          // Swiped left (previous card in RTL)
+          go(active + 1);
+        }
+      }
+    }
+  }
+
   function init() {
     /* build dots */
     var dotsWrap = document.getElementById("dots");
@@ -88,7 +122,7 @@
       }
     }
 
-    /* arrow buttons — bind here, NOT via inline onclick */
+    /* arrow buttons */
     var btnPrev = document.getElementById("btn-prev");
     var btnNext = document.getElementById("btn-next");
     if (btnPrev)
@@ -108,6 +142,13 @@
           go(parseInt(card.getAttribute("data-index"), 10));
         });
       });
+
+    /* touch events on the stage/track */
+    const stage = document.querySelector(".customer-reviews .stage");
+    if (stage) {
+      stage.addEventListener("touchstart", handleTouchStart, { passive: true });
+      stage.addEventListener("touchend", handleTouchEnd, { passive: true });
+    }
 
     render();
   }

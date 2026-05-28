@@ -45,19 +45,6 @@
   background-position: 0 0;
 }
 
-.services-hero .badge-pill {
-  display: inline-block;
-  background: rgba(249, 183, 31, 0.18);
-  color: var(--secondary-color);
-  border: 1px solid rgba(249, 183, 31, 0.35);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.35rem 1.1rem;
-  border-radius: 999px;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.04em;
-}
-
 .services-hero h1 {
   font-family: "El Messiri", sans-serif;
   font-size: clamp(2rem, 5vw, 3.25rem);
@@ -161,9 +148,9 @@
 
 .services-grid-section .section-sub {
   color: var(--text-light);
-  font-size: 0.93rem;
   max-width: 500px;
   line-height: 1.75;
+  font-weight: 500;
 }
 
 /* Service category groups */
@@ -321,7 +308,7 @@
 }
 
 .service-card .svc-body p {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--text-light);
   line-height: 1.75;
   margin: 0;
@@ -341,14 +328,17 @@
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--text-light);
+  font-weight: 500;
 }
 
-.service-card .svc-features li i {
+.service-card .svc-features li .svg-inline--fa {
   color: var(--primary-color);
-  font-size: 0.7rem;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
+  color: green;
 }
 
 /* card footer */
@@ -362,13 +352,13 @@
 }
 
 .service-card .svc-link {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--primary-color);
   text-decoration: none;
   transition: color 0.25s;
 }
-
+.service-card .svc-footer:hover .svc-link,
 .service-card .svc-link:hover {
   color: var(--secondary-color);
 }
@@ -409,18 +399,18 @@
 }
 
 .service-card.featured .card-right h4 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.6rem;
 }
 
 .service-card.featured .card-right p {
-  font-size: 0.88rem;
   color: var(--text-light);
   line-height: 1.8;
   margin-bottom: 1rem;
   flex: 1;
+  font-weight: 500;
 }
 
 .service-card.featured .svc-features {
@@ -472,7 +462,7 @@
 
 .services-process .proc-sub {
   color: var(--text-light);
-  font-size: 0.92rem;
+  font-weight: 500;
   margin-bottom: 3rem;
   max-width: 440px;
 }
@@ -538,14 +528,14 @@
 }
 
 .process-step h4 {
-  font-size: 0.98rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.4rem;
 }
 
 .process-step p {
-  font-size: 0.83rem;
+  font-size: 0.875rem;
   color: var(--text-light);
   line-height: 1.7;
   margin: 0;
@@ -581,7 +571,9 @@
 
 .services-wcu .wcu-sub {
   color: var(--text-light);
-  font-size: 0.92rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.75;
   margin-bottom: 2.5rem;
 }
 
@@ -649,14 +641,15 @@
 }
 
 .wcu-item h5 {
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.3rem;
 }
 
 .wcu-item p {
-  font-size: 0.83rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: var(--text-light);
   line-height: 1.7;
   margin: 0;
@@ -702,7 +695,7 @@
   max-width: 480px;
   margin: 0 auto 2rem;
   line-height: 1.8;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .services-cta .cta-actions {

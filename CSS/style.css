@@ -528,8 +528,8 @@ img {
   border-radius: 25px;
   transition: var(--main-transition);
 }
-.services .card-body .more-link:hover,
-.services .card-body .more-icon:hover {
+.more-content:hover .more-link,
+.services .more-content:hover .more-icon {
   color: var(--secondary-color) !important;
 }
 .services .card-body .more-icon {
