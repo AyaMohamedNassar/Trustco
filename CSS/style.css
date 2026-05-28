@@ -638,21 +638,17 @@ img {
 }
 
 .customer-reviews blockquote {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.65;
   color: var(--primary-color);
   flex: 1;
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 768px) {
-  .customer-reviews blockquote {
-    font-size: 1rem;
-  }
-}
+
 @media (min-width: 992px) {
   .customer-reviews blockquote {
     font-size: 1.25rem;
@@ -662,7 +658,7 @@ img {
   content: "\201C";
   align-self: start;
   font-weight: 700;
-  padding-left: 4px;
+  padding-left: 8px;
 }
 .customer-reviews blockquote::after {
   content: "\201D";
