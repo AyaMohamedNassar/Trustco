@@ -128,7 +128,7 @@
   color: var(--text-light);
   line-height: 1.9;
   margin-bottom: 1rem;
-  font-size: 0.97rem;
+  font-weight: 500;
 }
 
 .about-story .story-highlights {
@@ -160,16 +160,16 @@
 
 .about-story .highlight-text strong {
   display: block;
-  font-size: 0.92rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.2rem;
 }
 
 .about-story .highlight-text span {
-  font-size: 0.83rem;
+  font-size: 0.875rem;
   color: var(--text-light);
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* story image side */
@@ -271,6 +271,7 @@
   font-size: 0.92rem;
   max-width: 480px;
   line-height: 1.7;
+  font-weight: 500;
 }
 
 .vm-cards {
@@ -341,7 +342,7 @@
 
 .vm-card h3 {
   font-family: "Cairo", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
@@ -357,9 +358,10 @@
 }
 
 .vm-card p {
-  font-size: 0.87rem;
+  font-size: 1rem;
   line-height: 1.8;
   margin: 0;
+  font-weight: 500;
 }
 
 .vm-card.vision-card p {
@@ -412,6 +414,7 @@
   color: var(--text-light);
   font-size: 0.92rem;
   margin-bottom: 2.5rem;
+  font-weight: 500;
 }
 
 .team-grid {
@@ -476,21 +479,22 @@
 }
 
 .team-card h4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.25rem;
 }
 
 .team-card .role {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
 .team-card .team-desc {
-  font-size: 0.82rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: var(--text-light);
   line-height: 1.7;
   margin: 0;
@@ -526,6 +530,7 @@
   color: var(--text-light);
   font-size: 0.92rem;
   margin-bottom: 3rem;
+  font-weight: 500;
 }
 
 .timeline {
@@ -591,17 +596,18 @@
 }
 
 .timeline-content h4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.3rem;
 }
 
 .timeline-content p {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--text-light);
   line-height: 1.7;
   margin: 0;
+  font-weight: 500; 
 }
 
 /* ── CTA Banner ────────────────────────────── */
