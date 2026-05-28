@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trustco - للستائر والديكور</title>
     <meta
       name="description"
-      content="تواصل مع Trustco لطلب خدمات الستائر والديكور في البحرين. نحن نقدم حلولاً مخصصة لتلبية احتياجاتك، مع جودة عالية وتصميمات فريدة."
+      content="اكتشف معرض الصور الخاص بنا لستائر وأبواب Trustco في البحرين. شاهد تشكيلتنا الواسعة من التصاميم الأنيقة والعصرية التي تضيف لمسة جمالية لأي مساحة. تصفح الآن!"
     />
+    <title>Trustco – معرض المنتجات</title>
 
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
-
     <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="./CSS/all.min.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/contact.css" />
+    <link rel="stylesheet" href="./CSS/gallary.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,13 +23,13 @@
     />
   </head>
   <body>
+    <!-- ══════════════ NAVBAR ══════════════ -->
     <nav class="navbar navbar-expand-lg py-3">
       <div class="container">
         <div class="text-center">
           <a class="navbar-brand" href="index.html">Trustco</a>
           <span class="d-block me-3">للستائر والديكور — البحرين</span>
         </div>
-
         <button
           class="navbar-toggler"
           type="button"
@@ -42,23 +41,18 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item ms-3">
-              <a class="nav-link" aria-current="page" href="index.html">
-                الرئيسية
-              </a>
+              <a class="nav-link" href="index.html">الرئيسية</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="about.html">من نحن</a>
             </li>
-
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
-                href="#"
+                class="nav-link dropdown-toggle active"
+                href="services.html"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -66,7 +60,6 @@
               >
                 خدماتنا
               </a>
-
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a class="dropdown-item" href="services.html">كل الخدمات</a>
@@ -130,124 +123,95 @@
               </ul>
             </li>
           </ul>
-
           <button class="d-flex btn btn-primary mx-auto mx-lg-0">
-            <a href="contact.html"> تواصل معنا</a>
+            <a href="contact.html">تواصل معنا</a>
           </button>
         </div>
       </div>
     </nav>
 
-    <section
-      class="container py-5 d-flex justify-content-around align-items-center"
-    >
-      <div class="contact-wrapper">
-        <div class="info-side">
-          <p class="info-eyebrow">ابقَ على تواصل</p>
-          <h2 class="info-heading">كيف يمكننا<br />مساعدتك؟</h2>
-          <p class="info-sub">
-            فريقنا جاهز للإجابة على جميع استفساراتك. تواصل معنا بأي طريقة
-            تناسبك.
-          </p>
-          <div class="info-divider"></div>
-
-          <div class="info-card">
-            <div class="info-icon-wrap"><i class="fa-solid fa-phone"></i></div>
-            <div>
-              <p class="info-card-label">رقم الهاتف</p>
-              <p class="info-card-value">+966 53 880 9766</p>
-            </div>
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="gallery-hero">
+      <div class="container position-relative" style="z-index: 1">
+        <nav class="breadcrumb-nav" aria-label="breadcrumb">
+          <a href="index.html">الرئيسية</a>
+          <span class="sep">‹</span>
+          <a href="services.html">خدماتنا</a>
+          <span class="sep">‹</span>
+          <span id="hero-breadcrumb">...</span>
+        </nav>
+        <div class="hero-badge" id="hero-badge">معرض الصور</div>
+        <h1 id="hero-title">
+          معرض <span id="hero-title-highlight">المنتجات</span>
+        </h1>
+        <p class="hero-desc" id="hero-desc">
+          اكتشف مجموعتنا الكاملة من المنتجات عالية الجودة
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="num" id="stat-count">0</span>
+            <span class="lbl">صورة في المعرض</span>
           </div>
-
-          <div class="info-card">
-            <div class="info-icon-wrap">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div>
-              <p class="info-card-label">البريد الالكتروني</p>
-              <p class="info-card-value">aliobida25@gmail.com</p>
-            </div>
+          <div class="hero-stat">
+            <span class="num">100%</span>
+            <span class="lbl">جودة مضمونة</span>
           </div>
-
-          <div class="info-card">
-            <div class="info-icon-wrap">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div>
-              <p class="info-card-label">العنوان</p>
-              <p class="info-card-value">شارع الزورية، المشاعل، الرياض</p>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-icon-wrap"><i class="fa-solid fa-clock"></i></div>
-            <div>
-              <p class="info-card-label">مواعيد العمل</p>
-              <p class="info-card-value">
-                السبت – الخميس: 9ص – 11م<br />الجمعة: مغلق
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-side">
-          <p class="form-eyebrow">نموذج التواصل</p>
-          <h3 class="form-heading">اترك استفسارك</h3>
-          <p class="form-sub">سنرد عليك خلال 24 ساعة</p>
-
-          <div id="form-alert" style="display: none"></div>
-
-          <div class="field-row">
-            <div class="field-group">
-              <label for="sender-name">الاسم</label>
-              <input id="sender-name" type="text" placeholder="اسمك الكامل" />
-            </div>
-            <div class="field-group">
-              <label for="sender-email">البريد الالكتروني</label>
-              <input
-                id="sender-email"
-                type="email"
-                placeholder="example@email.com"
-              />
-            </div>
-          </div>
-
-          <div class="field-group">
-            <label for="sender-message">الرسالة</label>
-            <textarea
-              id="sender-message"
-              placeholder="اكتب رسالتك هنا..."
-            ></textarea>
-          </div>
-
-          <button id="btn-send" class="btn-send" type="button">
-            <span class="btn-dot"></span>
-            إرسال الرسالة
-            <i class="fa-solid fa-paper-plane"></i>
-          </button>
         </div>
       </div>
     </section>
 
+    <!-- ══════════════ GALLERY ══════════════ -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-controls">
+          <p class="gallery-count">
+            عرض <strong id="showing-count">0</strong> صورة من مجموعة
+            <span id="service-name-inline">...</span>
+          </p>
+          <a
+            href="services.html"
+            class="btn btn-sm btn-outline-secondary"
+            style="border-radius: 999px; font-size: 0.875rem"
+          >
+            <i class="fa-solid fa-arrow-right ms-1"></i> كل الخدمات
+          </a>
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CTA ══════════════ -->
+    <section class="gallery-cta">
+      <div class="container">
+        <h2>أعجبك ما شاهدته؟</h2>
+        <p>تواصل معنا للحصول على استشارة مجانية وقياس بدون أي التزام</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-cta-primary">
+            احجز موعد مجاني <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <a href="services.html" class="btn-cta-outline">
+            تصفح باقي الخدمات
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
     <footer id="footer">
       <div class="container">
         <div class="box">
           <h3>Trustco</h3>
           <ul class="social">
             <li>
-              <a href="#" class="facebook" description="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
+              <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
             </li>
             <li>
-              <a href="#" class="twitter" description="Twitter">
-                <i class="fab fa-x-twitter"></i>
-              </a>
+              <a href="#" class="twitter"><i class="fab fa-x-twitter"></i></a>
             </li>
             <li>
-              <a href="#" class="youtube" description="YouTube">
-                <i class="fab fa-youtube"></i>
-              </a>
+              <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
             </li>
           </ul>
           <p class="text">
@@ -255,7 +219,6 @@
             دفء وجمال لكل مساحة
           </p>
         </div>
-
         <div class="box">
           <ul class="links">
             <li><a href="index.html">الرئيسية</a></li>
@@ -264,13 +227,11 @@
             <li><a href="contact.html">اتصل بنا</a></li>
           </ul>
         </div>
-
         <div class="box">
           <div class="line">
             <i class="fas fa-map-marker-alt fa-fw"></i>
             <div class="info">شارع الزورية، المشاعل، الرياض</div>
           </div>
-
           <div class="line">
             <i class="far fa-clock fa-fw"></i>
             <div class="info">ساعات العمل: من 10:00 إلى 18:00</div>
@@ -279,16 +240,13 @@
             <i class="far fa-envelope fa-fw"></i>
             <div class="info">aliobida25@gmail.com</div>
           </div>
-
           <div class="line">
             <i class="fas fa-phone-volume fa-fw"></i>
             <div class="info">
-              <span>+20123456789</span>
-              <span>+20198765432</span>
+              <span>+20123456789</span><span>+20198765432</span>
             </div>
           </div>
         </div>
-
         <div class="box footer-gallery">
           <img src="./images/Curtains-1.webp" alt="Curtain 1" />
           <img src="./images/Curtains-2.jpg" alt="Curtain 2" />
@@ -301,6 +259,7 @@
       <p class="copyright">Trustco — البحرين 2026 &copy;</p>
     </footer>
 
+    <!-- Floating buttons -->
     <div class="d-flex gap-3 align-items-center">
       <a
         id="whatsapp-btn"
@@ -320,11 +279,37 @@
       </a>
     </div>
 
+    <!-- ══════════════ LIGHTBOX ══════════════ -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="عارض الصور">
+      <button class="lb-close" id="lb-close" aria-label="إغلاق">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <button class="lb-arrow lb-prev" id="lb-prev" aria-label="السابق">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button class="lb-arrow lb-next" id="lb-next" aria-label="التالي">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="lb-img-wrap">
+        <img id="lb-img" src="" alt="" />
+      </div>
+
+      <div class="lb-bar">
+        <span class="lb-counter" id="lb-counter">1 / 1</span>
+        <span class="lb-caption" id="lb-caption"></span>
+        <a id="lb-download" href="#" download class="lb-download-btn">
+          <i class="fa-solid fa-download"></i> تحميل الصورة
+        </a>
+      </div>
+
+      <div class="lb-thumbs" id="lb-thumbs"></div>
+    </div>
+
+    <!-- Scripts -->
     <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="./JS/config.js"></script>
-    <script src="./JS/email.js"></script>
     <script src="./JS/main.js"></script>
+    <script src="./JS/gallary.js"></script>
   </body>
 </html>

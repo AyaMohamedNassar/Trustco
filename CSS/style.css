@@ -819,9 +819,15 @@ img {
   padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
   transition: var(--main-transition);
   position: relative;
+}
+@media (max-width: 767.98px) {
+  .wcu-card {
+    padding: 1rem;
+  }
 }
 .wcu-card::after,
 .wcu-card::before {
@@ -861,13 +867,13 @@ img {
   flex-shrink: 0;
 }
 .wcu-card h5 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
   margin: 0;
 }
 .wcu-card p {
-  font-size: 0.875rem;
+  font-size:1rem;
   color: var(--text-light);
   line-height: 1.7;
   margin: 0;
