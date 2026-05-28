@@ -9,10 +9,17 @@
   --border-color: #cbd1e1;
   --bg-light: #f7f7f7;
   --main-transition: 0.3s;
+  --bg: #ececec;
+  --card-bg: #eae0cf;
+  --text-dark: #1a1a1a;
+  --text-soft: #999;
+  --accent: #1a1a1a;
+  --radius: 20px;
+  --transition: 0.75s cubic-bezier(0.34, 1.15, 0.64, 1);
 }
 * {
-  --webkit-box-sizing: border-box;
-  --moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -48,6 +55,24 @@ a {
 img {
   width: 100%;
   height: auto;
+}
+.spikes {
+  position: relative;
+}
+.spikes::before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  display: block;
+  height: 80px;
+  background-size: 32px 100%;
+  background-image:
+    linear-gradient(225deg, var(--primary-color) 25%, transparent 25%),
+    linear-gradient(135deg, var(--primary-color) 25%, transparent 25%);
+  background-position: 0px 0px;
+  z-index: 1;
 }
 .navbar {
   background-color: var(--cream);
@@ -176,8 +201,8 @@ img {
   position: fixed;
   bottom: 1.5rem;
   font-size: 1.25rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   background-color: var(--primary-color);
   color: var(--cream);
   transition: var(--main-transition);
@@ -186,7 +211,11 @@ img {
     0px 4px 14px 1px rgb(0 0 0 / 13%),
     1px 4px 4px 0px rgb(0 0 0 / 12%);
 }
-
+.contact:hover {
+  background-color: var(--secondary-color) !important;
+  color: var(--cream);
+  border: 1px solid var(--secondary-color);
+}
 .whatsapp {
   left: 0;
   right: 5rem;
@@ -204,13 +233,15 @@ img {
   }
 }
 .carousel-item {
-  height: 75dvh;
+  width: 100%;
+  overflow: hidden;
 }
 
-@media (max-width: 767.98px) {
-  .carousel-item {
-    height: 60dvh;
-  }
+.carousel-item img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
 }
 .carousel-item .badge {
   background-color: var(--primary-color);
@@ -218,6 +249,7 @@ img {
     1px 4px 4px 0px rgb(0 0 0 / 12%),
     0px 4px 14px 1px rgb(0 0 0 / 13%);
   border-radius: 25px;
+  padding: 0.5rem 1rem;
 }
 .carousel-item .line {
   background-color: rgb(39 57 106 / 75%);
@@ -275,10 +307,7 @@ img {
     font-size: 0.75rem;
   }
 }
-.carousel-item img {
-  object-fit: cover;
-  height: 100%;
-}
+
 .hero-btn {
   display: flex;
   align-items: center;
@@ -316,7 +345,7 @@ img {
   box-shadow: 0 8px 24px rgba(249, 183, 31, 0.568);
 }
 .carousel-control {
-  background-color: rgba(249, 183, 31, 0.715);
+  background-color: rgb(249, 183, 31);
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -324,7 +353,7 @@ img {
   box-shadow:
     0px 4px 14px 1px rgb(0 0 0 / 13%),
     1px 4px 4px 0px rgb(0 0 0 / 12%);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--secondary-color);
 }
 @media (max-width: 767.98px) {
   .carousel-control {
@@ -337,7 +366,7 @@ img {
   background-color: rgba(108, 108, 108, 0.3);
 }
 .carousel-indicators button {
-  background-color: rgb(249, 183, 31) !important;
+  background-color: rgb(252, 181, 16) !important;
 }
 .ticker-wrap {
   overflow: hidden;
@@ -345,17 +374,14 @@ img {
   border-bottom: 0.5px solid var(--border-color);
   background-color: var(--bs-body-bg);
   padding: 13px 0;
-  /* Force LTR so translateX direction is predictable on all browsers */
   direction: ltr;
 }
 
 .ticker-track {
   display: flex;
-  /* Let flexbox size itself naturally — no width: max-content needed with LTR fix */
   width: max-content;
   will-change: transform;
   animation: ticker-scroll 25s linear infinite;
-  /* Ensure sub-pixel rendering is smooth on mobile */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
@@ -372,7 +398,7 @@ img {
   white-space: nowrap;
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.05em; /* reduced — large letter-spacing breaks Arabic */
+  letter-spacing: 0.05em;
   color: var(--text);
   direction: rtl;
 }
@@ -399,6 +425,340 @@ img {
     animation: none;
   }
 }
+.services {
+  background-color: var(--cream-color);
+  padding-bottom: 8rem;
+}
+.customer-reviews .badge,
+.services .badge {
+  background-color: var(--secondary-color);
+  color: var(--cream);
+  padding: 0.25rem 0.75rem;
+  border-radius: 25px;
+  box-shadow:
+    1px 4px 4px 0px rgb(0 0 0 / 12%),
+    0px 4px 14px 1px rgb(0 0 0 / 13%);
+}
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  width: 250px;
+}
+.services .subtitle,
+.customer-reviews .subtitle {
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.services .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+.services .card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 12%);
+}
+.services .card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: relative;
+  transition: var(--main-transition);
+}
+.services .card .image-container {
+  position: relative;
+  overflow: hidden;
+  transition: var(--main-transition);
+}
+.services .card .image-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 20%);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: 2;
+  transition: var(--main-transition);
+}
+
+.services .card .image-container:hover::before {
+  animation: flashing 0.7s;
+}
+.services .card .image-container:hover img {
+  transform: scale(1.05);
+}
+.services .card-body {
+  padding: 0;
+}
+.services .card-body h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+}
+.services .card-body p {
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.services .card-body .more-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  transition: var(--main-transition);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem;
+}
+.services .card-body .more-link {
+  color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 25px;
+  transition: var(--main-transition);
+}
+.services .card-body .more-link:hover,
+.services .card-body .more-icon:hover {
+  color: var(--secondary-color) !important;
+}
+.services .card-body .more-icon {
+  color: var(--primary-color) !important;
+  animation: bouncing-arrow 1.5s infinite;
+}
+/* Customer reviews */
+.customer-reviews {
+  overflow: hidden;
+  background-color: var(--white);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.customer-reviews h2 {
+  font-size: 2.5rem;
+}
+
+.customer-reviews .reviews-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  direction: rtl;
+}
+
+/* Stage: full container width, clips overflow, fixed height */
+.customer-reviews .stage {
+  width: 100%;
+  position: relative;
+  height: 300px; /* fixed height so the section doesn't collapse */
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+
+/* Track: absolutely fills stage, does NOT scroll —
+   each card is positioned individually via JS left offset */
+.customer-reviews .track {
+  position: absolute;
+  inset: 0;
+}
+
+/* Each card slot: absolute, centred by JS */
+.customer-reviews .card-slot {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 10px;
+  /* horizontal centre set by JS via --offset custom prop */
+  left: calc(50% - 150px + var(--offset, 0px));
+  transition: left 0.75s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+@media (max-width: 575.98px) {
+  .customer-reviews .card-slot {
+    left: calc(50% - 50% + var(--offset, 0px));
+  }
+}
+/* Review card default (inactive) */
+.customer-reviews .review-card {
+  background: linear-gradient(118deg, var(--cream), var(--section-color));
+  color: var(--text-dark);
+  border: none;
+  border-radius: var(--radius);
+  padding: 28px 22px 20px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: pointer;
+  transform: scale(0.82) rotateY(0deg);
+  opacity: 0.45;
+  filter: blur(3px);
+  box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 13%);
+  transition:
+    transform 0.75s cubic-bezier(0.34, 1.15, 0.64, 1),
+    opacity 0.5s ease,
+    filter 0.5s ease;
+  will-change: transform, opacity, filter;
+}
+
+/* Active card */
+.customer-reviews .review-card.is-active {
+  transform: scale(1) rotateY(0deg) !important;
+  opacity: 1 !important;
+  filter: blur(0) !important;
+  z-index: 2;
+}
+.card-title {
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 16px 0;
+  z-index: 5;
+}
+/* ── card internals ── */
+.customer-reviews .stars {
+  color: var(--secondary-color);
+  font-size: 15px;
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+.customer-reviews blockquote {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--primary-color);
+  flex: 1;
+  margin: 0;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .customer-reviews blockquote {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .customer-reviews blockquote {
+    font-size: 1.25rem;
+  }
+}
+.customer-reviews blockquote::before {
+  content: "\201C";
+}
+.customer-reviews blockquote::after {
+  content: "\201D";
+}
+
+.customer-reviews .review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 6px;
+  border-top: 1px solid var(--white);
+}
+
+.customer-reviews .review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.customer-reviews .author-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  direction: ltr;
+}
+.customer-reviews .author-role {
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-top: 1px;
+  direction: rtl;
+}
+
+/* name label below stage */
+.customer-reviews .card-label {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-soft);
+  letter-spacing: 0.06em;
+  margin-top: 10px;
+  height: 18px;
+}
+
+/* Controls row — inline, not fixed */
+.customer-reviews .review-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(220, 220, 218, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 200, 198, 0.85);
+  border-radius: 999px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.customer-reviews .btn-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-size: 22px;
+  line-height: 1;
+  padding: 2px 6px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.customer-reviews .btn-nav:hover {
+  color: var(--primary-color);
+}
+.customer-reviews .btn-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.customer-reviews .review-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.customer-reviews .dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 999px;
+  background: #1829597d;
+  cursor: pointer;
+  transition:
+    width 0.35s ease,
+    background 0.35s ease;
+  flex-shrink: 0;
+}
+.customer-reviews .dot.active {
+  width: 28px;
+  background: var(--primary-color);
+}
+
+/* End Customer Reviews */
 
 footer {
   background-color: var(--cream);
@@ -485,7 +845,7 @@ footer .links li:hover a {
 }
 footer .links li a::before {
   font-family: "Font Awesome 5 Free";
-  content: "";
+  content: "";
   font-weight: 900;
   margin-left: 10px;
   color: var(--primary-color);
@@ -550,5 +910,17 @@ footer .footer-gallery img {
   40%,
   60% {
     transform: translateX(-8px);
+  }
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
   }
 }
