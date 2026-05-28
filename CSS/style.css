@@ -23,6 +23,7 @@
 html {
   scroll-behavior: smooth;
   scrollbar-color: var(--primary-color);
+  overflow-x: hidden;
 }
 ::selection {
   background-color: var(--primary-color);
@@ -429,7 +430,6 @@ img {
 }
 .services {
   background-color: var(--cream-color);
-  padding-bottom: 8rem;
 }
 .customer-reviews .badge,
 .services .badge {
@@ -454,7 +454,12 @@ img {
 .services .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 40px;
+  gap: 30px;
+}
+@media (max-width: 767.98px) {
+  .services .grid {
+    gap: 20px;
+  }
 }
 .services .card {
   border: none;
