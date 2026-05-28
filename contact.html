@@ -95,6 +95,9 @@
                 <li>
                   <a class="dropdown-item" href="#"> ستائر رول </a>
                 </li>
+                <li>
+                  <a class="dropdown-item" href="services.html">   كل الخدمات  </a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -270,12 +273,22 @@
     </footer>
 
     <div class="d-flex gap-3 align-items-center">
-      <button class="btn btn-sm whatsapp contact">
+      <a
+        id="whatsapp-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-sm whatsapp contact"
+        aria-label="تواصل عبر واتساب"
+      >
         <i class="fa-brands fa-whatsapp"></i>
-      </button>
-      <button class="btn btn-sm phone contact">
+      </a>
+      <a
+        href="tel:+20123456789"
+        class="btn btn-sm phone contact"
+        aria-label="اتصل بنا"
+      >
         <i class="fa-solid fa-phone"></i>
-      </button>
+      </a>
     </div>
 
     <script src="./JS/bootstrap.bundle.min.js"></script>

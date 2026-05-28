@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="./CSS/all.min.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/services.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item ms-3">
-              <a class="nav-link active" aria-current="page" href="index.html">
+              <a class="nav-link" aria-current="page" href="index.html">
                 الرئيسية
               </a>
             </li>
@@ -56,8 +57,8 @@
 
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
-                href="#"
+                class="nav-link dropdown-toggle active"
+                href="services.html"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -94,6 +95,9 @@
                 <li>
                   <a class="dropdown-item" href="#"> ستائر رول </a>
                 </li>
+                <li>
+                  <a class="dropdown-item" href="services.html"> كل الخدمات </a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -104,6 +108,541 @@
         </div>
       </div>
     </nav>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="services-hero">
+      <div class="container position-relative" style="z-index: 1">
+        <span class="badge-pill reveal">خدماتنا</span>
+        <h1 class="reveal reveal-delay-1">
+          حلول ديكور <span>متكاملة</span><br />لكل مساحة وكل ذوق
+        </h1>
+        <p class="lead reveal reveal-delay-2">
+          من الستائر الفاخرة إلى الأبواب العصرية — نقدم لك مجموعة شاملة من
+          المنتجات عالية الجودة مع تركيب احترافي وضمان كامل.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════ STICKY FILTER TABS ══════════════ -->
+    <div class="services-filter">
+      <div class="container">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">
+            <i class="fa-solid fa-grip"></i> الكل
+          </button>
+          <button class="filter-tab" data-filter="curtains">
+            <i class="fa-solid fa-table-columns"></i> الستائر
+          </button>
+          <button class="filter-tab" data-filter="doors">
+            <i class="fa-solid fa-door-open"></i> الأبواب
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ SERVICES GRID ══════════════ -->
+    <section class="services-grid-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">مجموعتنا الكاملة</span>
+          <h2>اكتشف منتجاتنا</h2>
+          <p class="section-sub">
+            كل منتج مصنوع بعناية ويأتي مع استشارة تصميم مجانية وتركيب احترافي
+            بضمان شامل.
+          </p>
+        </div>
+
+        <!-- ───── CURTAINS CATEGORY ───── -->
+        <div class="service-category" id="curtains" data-category="curtains">
+          <div class="category-label reveal">
+            <div class="category-label-icon">
+              <i class="fa-solid fa-table-columns"></i>
+            </div>
+            <h3>الستائر</h3>
+            <div class="cat-divider"></div>
+          </div>
+
+          <!-- Featured card: ستائر رول -->
+          <div class="mb-4 reveal reveal-delay-1">
+            <div class="service-card featured">
+              <div class="card-img-wrap">
+                <!-- Replace with: <img src="./images/service-roll.jpg" alt="ستائر رول"> -->
+                <div class="img-placeholder">
+                  <i class="fa-solid fa-scroll"></i>
+                  <span>ستائر رول</span>
+                </div>
+                <span class="card-badge badge-new">الأكثر طلباً</span>
+              </div>
+              <div class="card-right">
+                <h4>ستائر رول</h4>
+                <p>
+                  ستائر رول عصرية تجمع بين البساطة والأناقة، مثالية للمكاتب
+                  والمنازل. تتوفر بأقمشة متعددة من الشفافة إلى الحاجبة الكاملة،
+                  مع تقنيات تحكم يدوية وكهربائية.
+                </p>
+                <ul class="svc-features">
+                  <li>
+                    <i class="fa-solid fa-check"></i> أقمشة شفافة، نصف حاجبة،
+                    وحاجبة بالكامل
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> تحكم يدوي أو كهربائي
+                    (موتور صامت)
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> ألوان وأبعاد حسب الطلب
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> تركيب احترافي مع ضمان
+                    سنتين
+                  </li>
+                </ul>
+                <div class="svc-footer">
+                  <a href="contact.html" class="svc-link">اطلب قياس مجاني</a>
+                  <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid: 3 curtain cards -->
+          <div class="row g-4">
+            <!-- ستائر زيبرا -->
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+              <div class="service-card">
+                <div class="card-img-wrap">
+                  <div class="img-placeholder">
+                    <i class="fa-solid fa-grip-lines"></i>
+                    <span>ستائر زيبرا</span>
+                  </div>
+                  <span class="card-badge">جديد</span>
+                </div>
+                <div class="svc-body">
+                  <h4>ستائر زيبرا</h4>
+                  <p>
+                    تصميم عصري بشرائط متبادلة يتيح التحكم الدقيق في الضوء
+                    والخصوصية في آنٍ واحد.
+                  </p>
+                </div>
+                <ul class="svc-features">
+                  <li><i class="fa-solid fa-check"></i> تحكم دقيق بالإضاءة</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> تصاميم متعددة الألوان
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> سهولة الصيانة والتنظيف
+                  </li>
+                </ul>
+                <div class="svc-footer">
+                  <a href="contact.html" class="svc-link">تواصل معنا</a>
+                  <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ستائر خشبية -->
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+              <div class="service-card">
+                <div class="card-img-wrap">
+                  <div class="img-placeholder">
+                    <i class="fa-solid fa-tree"></i>
+                    <span>ستائر خشبية</span>
+                  </div>
+                </div>
+                <div class="svc-body">
+                  <h4>ستائر خشبية</h4>
+                  <p>
+                    لمسة دافئة وطبيعية تضيف عمقاً وفخامة لأي غرفة، مصنوعة من
+                    أخشاب عالية الجودة.
+                  </p>
+                </div>
+                <ul class="svc-features">
+                  <li>
+                    <i class="fa-solid fa-check"></i> أخشاب طبيعية وصناعية فاخرة
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> مقاومة للرطوبة والحرارة
+                  </li>
+                  <li><i class="fa-solid fa-check"></i> ألوان وأحجام مخصصة</li>
+                </ul>
+                <div class="svc-footer">
+                  <a href="contact.html" class="svc-link">تواصل معنا</a>
+                  <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ستائر معدنية -->
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-3">
+              <div class="service-card">
+                <div class="card-img-wrap">
+                  <div class="img-placeholder">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>ستائر معدنية</span>
+                  </div>
+                </div>
+                <div class="svc-body">
+                  <h4>ستائر معدنية</h4>
+                  <p>
+                    متانة استثنائية ومظهر عصري أنيق، خيار مثالي للمساحات
+                    التجارية والسكنية على حدٍّ سواء.
+                  </p>
+                </div>
+                <ul class="svc-features">
+                  <li><i class="fa-solid fa-check"></i> ألمنيوم عالي الجودة</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> مقاومة للصدأ والتآكل
+                  </li>
+                  <li><i class="fa-solid fa-check"></i> خيارات تحكم متعددة</li>
+                </ul>
+                <div class="svc-footer">
+                  <a href="contact.html" class="svc-link">تواصل معنا</a>
+                  <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ستائر ويفي -->
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+              <div class="service-card">
+                <div class="card-img-wrap">
+                  <div class="img-placeholder">
+                    <i class="fa-solid fa-water"></i>
+                    <span>ستائر ويفي</span>
+                  </div>
+                  <span class="card-badge badge-new">رائج</span>
+                </div>
+                <div class="svc-body">
+                  <h4>ستائر ويفي</h4>
+                  <p>
+                    تتميز بتموجاتها الناعمة وإطلالتها الحديثة، تضفي جواً من
+                    الهدوء والأناقة على أي فضاء.
+                  </p>
+                </div>
+                <ul class="svc-features">
+                  <li><i class="fa-solid fa-check"></i> قماش عالي الجودة</li>
+                  <li><i class="fa-solid fa-check"></i> حركة انسيابية ناعمة</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> مناسبة لغرف النوم والمعيشة
+                  </li>
+                </ul>
+                <div class="svc-footer">
+                  <a href="contact.html" class="svc-link">تواصل معنا</a>
+                  <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ستائر عمودية -->
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+              <div class="service-card">
+                <div class="card-img-wrap">
+                  <div class="img-placeholder">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>ستائر عمودية</span>
+                  </div>
+                </div>
+                <div class="svc-body">
+                  <h4>ستائر عمودية</h4>
+                  <p>
+                    تصميم كلاسيكي عملي يناسب النوافذ والأبواب الكبيرة، مع سهولة
+                    الفتح والإغلاق.
+                  </p>
+                </div>
+                <ul class="svc-features">
+                  <li>
+                    <i class="fa-solid fa-check"></i> مناسبة للنوافذ الطويلة
+                    والأبواب
+                  </li>
+                  <li><i class="fa-solid fa-check"></i> أقمشة وألوان متنوعة</li>
+                  <li><i class="fa-solid fa-check"></i> تشغيل سلس وصامت</li>
+                </ul>
+                <div class="svc-footer">
+                  <a href="contact.html" class="svc-link">تواصل معنا</a>
+                  <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /row curtains -->
+        </div>
+        <!-- /curtains category -->
+
+        <!-- ───── DOORS CATEGORY ───── -->
+        <div
+          class="service-category"
+          id="accordion-doors"
+          data-category="doors"
+        >
+          <div class="category-label reveal">
+            <div class="category-label-icon">
+              <i class="fa-solid fa-door-open"></i>
+            </div>
+            <h3>الأبواب</h3>
+            <div class="cat-divider"></div>
+          </div>
+
+          <div class="row g-4">
+            <!-- أبواب أكورديون بلاستيك -->
+            <div class="col-md-6 reveal reveal-delay-1">
+              <div class="service-card featured" style="flex-direction: column">
+                <div
+                  class="card-img-wrap"
+                  style="width: 100%; aspect-ratio: 16/7; min-height: unset"
+                >
+                  <div class="img-placeholder">
+                    <i class="fa-solid fa-door-closed"></i>
+                    <span>أكورديون بلاستيك</span>
+                  </div>
+                  <span class="card-badge">الأكثر اقتصاداً</span>
+                </div>
+                <div class="card-right" style="padding: 1.25rem">
+                  <h4>أبواب أكورديون بلاستيك</h4>
+                  <p>
+                    خيار عملي وخفيف الوزن لتقسيم المساحات بشكل مرن. مقاومة
+                    للرطوبة، سهلة التركيب، ومتوفرة بألوان ومقاسات متعددة.
+                  </p>
+                  <ul class="svc-features">
+                    <li>
+                      <i class="fa-solid fa-check"></i> مقاومة للرطوبة ومناسبة
+                      للحمامات والمطابخ
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i> خفيفة الوزن وسهلة
+                      الاستخدام
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i> ألوان متعددة وقابلة للقص
+                      بالمقاس
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i> تركيب سريع دون إتلاف
+                      الجدران
+                    </li>
+                  </ul>
+                  <div class="svc-footer">
+                    <a href="contact.html" class="svc-link">احصل على عرض سعر</a>
+                    <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- أبواب أكورديون جلد -->
+            <div class="col-md-6 reveal reveal-delay-2">
+              <div class="service-card featured" style="flex-direction: column">
+                <div
+                  class="card-img-wrap"
+                  style="width: 100%; aspect-ratio: 16/7; min-height: unset"
+                >
+                  <div class="img-placeholder">
+                    <i class="fa-solid fa-door-open"></i>
+                    <span>أكورديون جلد</span>
+                  </div>
+                  <span class="card-badge badge-new">فاخر</span>
+                </div>
+                <div class="card-right" style="padding: 1.25rem">
+                  <h4>أبواب أكورديون جلد</h4>
+                  <p>
+                    رقي وعملية في آنٍ واحد — أبواب أكورديون مكسوة بالجلد الفاخر
+                    تمنح مساحتك مظهراً احترافياً راقياً مع الحفاظ على مرونة
+                    التقسيم.
+                  </p>
+                  <ul class="svc-features">
+                    <li>
+                      <i class="fa-solid fa-check"></i> جلد طبيعي وصناعي فاخر
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i> عازل للصوت بشكل أفضل
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i> مثالي للمكاتب وغرف
+                      الاجتماعات
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check"></i> تشطيبات راقية بألوان
+                      متعددة
+                    </li>
+                  </ul>
+                  <div class="svc-footer">
+                    <a href="contact.html" class="svc-link">احصل على عرض سعر</a>
+                    <i class="fa-solid fa-arrow-left svc-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /row doors -->
+        </div>
+        <!-- /doors category -->
+      </div>
+    </section>
+
+    <!-- ══════════════ PROCESS STEPS ══════════════ -->
+    <section class="services-process">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="section-eyebrow reveal">كيف نعمل</span>
+          <h2 class="reveal reveal-delay-1">من الاستشارة إلى التسليم</h2>
+          <p class="proc-sub mx-auto reveal reveal-delay-2">
+            أربع خطوات بسيطة تفصلك عن مساحة أجمل.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step reveal reveal-delay-1">
+            <div class="step-num">١</div>
+            <h4>استشارة مجانية</h4>
+            <p>تواصل معنا وأخبرنا باحتياجاتك، ونصلك في الوقت المناسب.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="step-num">٢</div>
+            <h4>قياس وتصميم</h4>
+            <p>فريقنا يأخذ القياسات الدقيقة ويقترح التصميم الأنسب لمساحتك.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <div class="step-num">٣</div>
+            <h4>التصنيع والتجهيز</h4>
+            <p>ننفذ طلبك بدقة عالية باستخدام أجود الخامات وأحدث التقنيات.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-4">
+            <div class="step-num">٤</div>
+            <h4>التركيب والتسليم</h4>
+            <p>
+              تركيب احترافي في الموعد المحدد مع ضمان شامل وخدمة ما بعد البيع.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ WHY CHOOSE US ══════════════ -->
+    <section class="services-wcu">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="section-eyebrow reveal">لماذا Trustco</span>
+          <h2 class="reveal reveal-delay-1">ما يجعلنا الخيار الأول</h2>
+          <p class="wcu-sub reveal reveal-delay-2">
+            أكثر من ١٠ سنوات من الخبرة ترتكز على ثقة عملائنا.
+          </p>
+        </div>
+
+        <div class="wcu-list">
+          <div class="wcu-item reveal reveal-delay-1">
+            <div
+              class="wcu-i-icon"
+              style="background: rgba(24, 41, 89, 0.08); color: #182959"
+            >
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <div>
+              <h5>جودة مضمونة</h5>
+              <p>
+                نختار أجود الخامات من موردين معتمدين ونضمن لك منتجاً يدوم سنوات
+                بدون أي خلل.
+              </p>
+            </div>
+          </div>
+
+          <div class="wcu-item reveal reveal-delay-2">
+            <div
+              class="wcu-i-icon"
+              style="background: rgba(249, 183, 31, 0.15); color: #ad7a0a"
+            >
+              <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+            <div>
+              <h5>قياس وتصميم مجاني</h5>
+              <p>
+                نصلك في بيتك أو مكتبك لأخذ القياسات الدقيقة وتقديم مقترح تصميم
+                مخصص بدون أي رسوم.
+              </p>
+            </div>
+          </div>
+
+          <div class="wcu-item reveal reveal-delay-3">
+            <div
+              class="wcu-i-icon"
+              style="background: rgba(24, 41, 89, 0.08); color: #182959"
+            >
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div>
+              <h5>تركيب احترافي</h5>
+              <p>
+                فريق مدرّب يصل في الموعد المحدد وينهي التركيب بإتقان كامل دون
+                إتلاف الجدران أو الأثاث.
+              </p>
+            </div>
+          </div>
+
+          <div class="wcu-item reveal reveal-delay-4">
+            <div
+              class="wcu-i-icon"
+              style="background: rgba(249, 183, 31, 0.15); color: #ad7a0a"
+            >
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <h5>ضمان شامل</h5>
+              <p>
+                جميع منتجاتنا وأعمال التركيب مغطاة بضمان شامل يريح بالك ويحميك
+                من أي مفاجآت.
+              </p>
+            </div>
+          </div>
+
+          <div class="wcu-item reveal reveal-delay-1">
+            <div
+              class="wcu-i-icon"
+              style="background: rgba(24, 41, 89, 0.08); color: #182959"
+            >
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <h5>التزام بالمواعيد</h5>
+              <p>
+                نحترم وقتك. إذا تأخرنا عن الموعد المتفق عليه نقدم خصماً تعويضياً
+                على الفاتورة.
+              </p>
+            </div>
+          </div>
+
+          <div class="wcu-item reveal reveal-delay-2">
+            <div
+              class="wcu-i-icon"
+              style="background: rgba(249, 183, 31, 0.15); color: #ad7a0a"
+            >
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <div>
+              <h5>دعم ما بعد البيع</h5>
+              <p>
+                فريق خدمة العملاء متاح لمساعدتك في أي استفسار أو صيانة بعد
+                الشراء.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CTA BANNER ══════════════ -->
+    <section class="services-cta">
+      <div class="container position-relative" style="z-index: 1">
+        <h2 class="reveal">جاهز لتحويل مساحتك؟</h2>
+        <p class="reveal reveal-delay-1">
+          تواصل معنا الآن للحصول على استشارة وقياس مجاني — بدون أي التزام.
+        </p>
+        <div class="cta-actions reveal reveal-delay-2">
+          <a href="contact.html" class="btn-cta-primary">
+            احجز موعد مجاني
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <a href="about.html" class="btn-cta-outline"> تعرف علينا أكثر </a>
+        </div>
+      </div>
+    </section>
 
     <footer id="footer">
       <div class="container">
@@ -178,16 +717,72 @@
     </footer>
 
     <div class="d-flex gap-3 align-items-center">
-      <button class="btn btn-sm whatsapp contact">
+      <a
+        id="whatsapp-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-sm whatsapp contact"
+        aria-label="تواصل عبر واتساب"
+      >
         <i class="fa-brands fa-whatsapp"></i>
-      </button>
-      <button class="btn btn-sm phone contact">
+      </a>
+      <a
+        href="tel:+20123456789"
+        class="btn btn-sm phone contact"
+        aria-label="اتصل بنا"
+      >
         <i class="fa-solid fa-phone"></i>
-      </button>
+      </a>
     </div>
 
     <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/all.min.js"></script>
     <script src="./JS/main.js"></script>
+    <script>
+      // ── Scroll reveal ──────────────────────────
+      (function () {
+        const revealEls = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        revealEls.forEach((el) => observer.observe(el));
+      })();
+
+      // ── Category filter tabs ───────────────────
+      (function () {
+        const tabs = document.querySelectorAll(".filter-tab");
+        const categories = document.querySelectorAll(".service-category");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            const filter = tab.dataset.filter;
+
+            categories.forEach((cat) => {
+              if (filter === "all" || cat.dataset.category === filter) {
+                cat.style.display = "";
+              } else {
+                cat.style.display = "none";
+              }
+            });
+
+            // scroll to grid section smoothly
+            document
+              .querySelector(".services-grid-section")
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

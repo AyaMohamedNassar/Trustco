@@ -209,8 +209,11 @@ img {
     0px 4px 14px 1px rgb(0 0 0 / 13%),
     1px 4px 4px 0px rgb(0 0 0 / 12%);
 }
-.contact a{
+.contact a {
   color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .contact:hover {
   background-color: var(--secondary-color) !important;
@@ -636,6 +639,9 @@ img {
   flex: 1;
   margin: 0;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .customer-reviews blockquote {
@@ -649,9 +655,14 @@ img {
 }
 .customer-reviews blockquote::before {
   content: "\201C";
+  align-self: start;
+  font-weight: 700;
+  padding-left: 4px;
 }
 .customer-reviews blockquote::after {
   content: "\201D";
+  font-weight: 700;
+  align-self: end;
 }
 
 .customer-reviews .review-author {
@@ -810,7 +821,6 @@ img {
   content: "";
   position: absolute;
   height: 0px;
-
   background-color: var(--primary-color);
   transition: 1s;
 }

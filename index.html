@@ -57,7 +57,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="services.html"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -94,6 +94,9 @@
                 <li>
                   <a class="dropdown-item" href="#"> ستائر رول </a>
                 </li>
+                <li>
+                  <a class="dropdown-item" href="services.html">   كل الخدمات  </a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -106,7 +109,11 @@
     </nav>
 
     <section class="hero">
-      <div id="carouselExampleCaptions" class="carousel slide">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
         <div class="carousel-indicators">
           <button
             type="button"
@@ -818,20 +825,28 @@
     </footer>
 
     <div class="d-flex gap-3 align-items-center">
-      <button class="btn btn-sm whatsapp contact">
+      <a
+        id="whatsapp-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-sm whatsapp contact"
+        aria-label="تواصل عبر واتساب"
+      >
         <i class="fa-brands fa-whatsapp"></i>
-      </button>
-      <button class="btn btn-sm phone contact">
-        <a href="tel:+20123456789">
-          <i class="fa-solid fa-phone"></i>
-        </a>
-      </button>
+      </a>
+      <a
+        href="tel:+20123456789"
+        class="btn btn-sm phone contact"
+        aria-label="اتصل بنا"
+      >
+        <i class="fa-solid fa-phone"></i>
+      </a>
     </div>
 
     <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/all.min.js"></script>
     <script src="JS/config.js"></script>
-    <script type="module" src="./JS/main.js"></script>
+    <script src="./JS/main.js"></script>
     <script src="./JS/reviews.js"></script>
   </body>
 </html>
