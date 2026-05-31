@@ -59,8 +59,9 @@
 }
 
 .services-hero p.lead {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--cream);
   max-width: 540px;
   margin: 0 auto;
   line-height: 1.85;
@@ -141,7 +142,7 @@
 
 .services-grid-section h2 {
   font-family: "El Messiri", sans-serif;
-  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 0.4rem;
@@ -151,6 +152,7 @@
   color: var(--text-light);
   max-width: 500px;
   line-height: 1.75;
+  font-size: 1.125rem;
   font-weight: 500;
 }
 
@@ -706,6 +708,7 @@
   margin: 0 auto 2rem;
   line-height: 1.7;
   font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .services-cta .cta-actions {

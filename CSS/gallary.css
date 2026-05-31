@@ -124,7 +124,7 @@
 }
 @media (min-width: 992px) {
   .gallery-count {
-   font-size: 1.125rem;
+    font-size: 1.125rem;
   }
 }
 .gallery-count strong {
@@ -154,6 +154,8 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: space-between !important;
+  margin-right: auto;
+  border-radius: 999px !important;
 }
 .btn-outline-secondary:hover {
   background: var(--secondary-color) !important;
@@ -471,12 +473,11 @@
 .gallery-cta p {
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 1.75rem;
+  margin-top: 1.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
-@media (min-width: 991px) {
-  .gallery-cta p {
-    font-size: 1.125rem;
-  }
-}
+
 .gallery-cta .cta-actions {
   display: flex;
   gap: 1rem;
