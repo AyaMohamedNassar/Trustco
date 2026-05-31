@@ -161,6 +161,12 @@ img {
 }
 .dropdown-menu li a {
   transition: var(--main-transition);
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  .dropdown-menu li a {
+    font-size: 1.125rem;
+  }
 }
 .dropdown-menu li:hover a {
   margin-right: 5px;
@@ -171,7 +177,7 @@ img {
 .dropdown-menu[data-bs-popper] {
   right: 8px;
   left: auto;
-  min-width: 220px !important;
+  min-width: 235px !important;
 }
 .btn-primary {
   background-color: var(--primary-color) !important;

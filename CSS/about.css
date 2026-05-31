@@ -52,11 +52,12 @@
 }
 
 .about-hero p.lead {
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.78);
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto 2rem;
   line-height: 1.8;
+  font-weight: 500;
 }
 
 .about-hero-stats {
@@ -84,9 +85,10 @@
 
 .about-hero-stats .stat-label {
   display: block;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+  color: var(--cream);
   margin-top: 0.3rem;
+  font-weight: 500;
 }
 
 /* ── Story Section ─────────────────────────── */
@@ -374,7 +376,7 @@
 }
 
 .vm-card.vision-card p {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--cream);
 }
 .vm-card.mission-card p {
   color: var(--text-light);
