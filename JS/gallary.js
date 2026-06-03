@@ -372,9 +372,7 @@ service.images.forEach((item, idx) => {
   grid.appendChild(card);
 });
 
-// ══════════════════════════════════════════════════
-//  LIGHTBOX
-// ══════════════════════════════════════════════════
+
 let currentIdx = 0;
 const lb = document.getElementById("lightbox");
 const lbImg = document.getElementById("lb-img");

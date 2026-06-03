@@ -1,8 +1,3 @@
-/* =============================================
-   Trustco — Customer Reviews Carousel
-   reviews.js  (improved)
-   ============================================= */
-
 (function () {
   "use strict";
 
