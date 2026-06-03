@@ -1,11 +1,9 @@
 :root {
-  --cream: #faf7f2;
   --text: #2d2010;
   --section-color: #eae0cf;
   --primary-color: #182959;
   --secondary-color: #f9b71f;
   --text-light: #636363;
-  --white: #fff;
   --border-color: #cbd1e1;
   --bg-light: #f7f7f7;
   --main-transition: 0.3s;
@@ -14,6 +12,13 @@
   --text-soft: #999;
   --radius: 20px;
   --transition: 0.75s cubic-bezier(0.34, 1.15, 0.64, 1);
+  --dark-navy: #1a2744;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --cream: #faf8f3;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --light-gray: #f5f4f0;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -22,12 +27,20 @@
 }
 html {
   scroll-behavior: smooth;
-  scrollbar-color: var(--primary-color);
   overflow-x: hidden;
 }
 ::selection {
   background-color: var(--primary-color);
   color: var(--cream);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-navy);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
 }
 body {
   background-color: var(--cream);
@@ -74,18 +87,20 @@ img {
   z-index: 1;
 }
 .navbar {
+  --bs-navbar-padding-y: 0;
+  padding-bottom: 0.5rem;
   background-color: var(--cream);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
 }
-.navbar-brand {
-  font-family: "El Messiri", sans-serif;
-  font-size: 1.8rem;
-  color: var(--primary-color);
+.logo-box {
+  margin-top: -1.25rem;
 }
-.navbar-brand:hover {
-  color: var(--primary-color) !important;
+.navbar-brand img {
+  display: block;
+  height: 100px;
+  width: auto;
 }
 .nav-link {
   color: var(--text);
@@ -451,6 +466,27 @@ img {
   margin-bottom: 1.5rem;
   width: 250px;
 }
+.services .line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.services .btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  width: fit-content;
+}
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: var(--main-transition);
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--cream) !important;
+  border-color: var(--primary-color) !important;
+}
 .services .subtitle,
 .customer-reviews .subtitle {
   color: var(--text-light);
@@ -506,6 +542,9 @@ img {
   transform: scale(1.05);
 }
 .services .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0;
 }
 .services .card-body h5 {
