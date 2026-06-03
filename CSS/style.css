@@ -1236,13 +1236,16 @@ footer .social a {
 footer .social a .svg-inline--fa {
   font-size: 20px;
 }
-footer .social li:first-child:hover {
+footer .social li.instegram:hover {
+  background-color: rgb(251, 31, 155);
+}
+footer .social li.facebook:hover {
   background-color: rgb(24, 119, 242);
 }
-footer .social li:nth-child(2):hover {
+footer .social li.twitter:hover {
   background-color: rgb(29, 161, 242);
 }
-footer .social li:last-child:hover {
+footer .social li.youtube:hover {
   background-color: rgb(255, 0, 0);
 }
 footer .text {
