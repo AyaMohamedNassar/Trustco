@@ -26,11 +26,11 @@
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <div  class="logo-box">
+        <div class="logo-box">
           <a class="navbar-brand" href="index.html">
             <img src="./images/logo.png" alt="مصنع الثقة"
           /></a>
-          <span class="d-block ">للستائر والأبواب — البحرين</span>
+          <span class="d-block">للستائر والأبواب — البحرين</span>
         </div>
 
         <button
@@ -1621,6 +1621,29 @@
       </a>
     </div>
 
+    <!-- Lightbox Overlay -->
+    <div
+      id="lightbox"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="عرض الصورة"
+    >
+      <button class="lightbox-close" id="lightbox-close" aria-label="إغلاق">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <a
+        class="lightbox-download"
+        id="lightbox-download"
+        download
+        aria-label="تحميل الصورة"
+      >
+        <i class="fa-solid fa-download"></i>
+        <span>تحميل</span>
+      </a>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+
     <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/all.min.js"></script>
     <script src="./JS/main.js"></script>
@@ -1666,6 +1689,47 @@
               .querySelector(".services-grid-section")
               .scrollIntoView({ behavior: "smooth", block: "start" });
           });
+        });
+      })();
+
+      // ── Lightbox ───────────────────────────────
+      (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lightbox-img");
+        const lbDownload = document.getElementById("lightbox-download");
+        const lbClose = document.getElementById("lightbox-close");
+
+        const images = document.querySelectorAll("img:not(.navbar-brand img)");
+
+        images.forEach((img) => {
+          img.classList.add("lightbox-trigger");
+          img.addEventListener("click", () => openLightbox(img.src, img.alt));
+        });
+
+        function openLightbox(src, alt) {
+          lbImg.src = src;
+          lbImg.alt = alt || "";
+          lbDownload.href = src;
+          const filename = src.split("/").pop() || "image";
+          lbDownload.setAttribute("download", filename);
+          lightbox.classList.add("is-open");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("is-open");
+          document.body.style.overflow = "";
+          lbImg.src = "";
+        }
+
+        lbClose.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+          }
         });
       })();
     </script>

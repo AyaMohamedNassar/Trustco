@@ -26,7 +26,9 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <div class="logo-box">
-          <a class="navbar-brand" href="index.html"> <img src="./images/logo.png" alt="مصنع الثقة"></a>
+          <a class="navbar-brand" href="index.html">
+            <img src="./images/logo.png" alt="مصنع الثقة"
+          /></a>
           <span class="d-block">للستائر والأبواب — البحرين</span>
         </div>
 
@@ -902,8 +904,12 @@
         <div class="box">
           <h3>مصنع الثقة</h3>
           <ul class="social">
-            <li class="instegram"> 
-              <a href="https://www.instagram.com/trust_factory?igsh=MW9wdTk3YXZhNHdtbA==" class="instegram" description="Instegram">
+            <li class="instegram">
+              <a
+                href="https://www.instagram.com/trust_factory?igsh=MW9wdTk3YXZhNHdtbA=="
+                class="instegram"
+                description="Instegram"
+              >
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
@@ -995,10 +1001,82 @@
       </a>
     </div>
 
+    <!-- Lightbox Overlay -->
+    <div
+      id="lightbox"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="عرض الصورة"
+    >
+      <button class="lightbox-close" id="lightbox-close" aria-label="إغلاق">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <a
+        class="lightbox-download"
+        id="lightbox-download"
+        download
+        aria-label="تحميل الصورة"
+      >
+        <i class="fa-solid fa-download"></i>
+        <span>تحميل</span>
+      </a>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+
     <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/all.min.js"></script>
     <script src="JS/config.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/reviews.js"></script>
+    <script>
+      (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lightbox-img");
+        const lbDownload = document.getElementById("lightbox-download");
+        const lbClose = document.getElementById("lightbox-close");
+
+        // Make every image in the page clickable (except logo & carousel nav)
+        const images = document.querySelectorAll(
+          "img:not(.navbar-brand img):not(.carousel-control img)",
+        );
+
+        images.forEach((img) => {
+          img.classList.add("lightbox-trigger");
+          img.addEventListener("click", () => openLightbox(img.src, img.alt));
+        });
+
+        function openLightbox(src, alt) {
+          lbImg.src = src;
+          lbImg.alt = alt || "";
+          lbDownload.href = src;
+          // Extract filename from path for the download attribute
+          const filename = src.split("/").pop() || "image";
+          lbDownload.setAttribute("download", filename);
+          lightbox.classList.add("is-open");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("is-open");
+          document.body.style.overflow = "";
+          lbImg.src = "";
+        }
+
+        lbClose.addEventListener("click", closeLightbox);
+
+        // Close when clicking outside the image
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+
+        // Close on Escape key
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
