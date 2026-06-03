@@ -373,11 +373,7 @@
   .service-card.roll-featured {
     flex-direction: column;
   }
-  .service-card.roll-featured .card-img-wrap {
-    width: 100%;
-    min-height: 220px;
-    aspect-ratio: 4/3;
-  }
+  
 }
 .service-card.featured .card-img-wrap {
   flex-shrink: 0;
@@ -432,7 +428,6 @@
   .service-card.featured .card-img-wrap {
     width: 100%;
     min-height: 220px;
-    aspect-ratio: 4/3;
   }
 }
 
