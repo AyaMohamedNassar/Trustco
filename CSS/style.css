@@ -2044,3 +2044,70 @@ footer .footer-gallery img {
     opacity: 0;
   }
 }
+
+/* ===== Clients Section ===== */
+.clients-section {
+  padding: 5rem 0;
+  background-color: var(--cream);
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.clients-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+.clients-header .subtitle {
+  color: var(--text-light);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clients-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: var(--main-transition);
+}
+
+.clients-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.clients-card-label {
+  background-color: var(--primary-color);
+  color: var(--cream);
+  padding: 0.75rem 1.25rem;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clients-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
