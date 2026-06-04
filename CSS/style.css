@@ -832,7 +832,20 @@ img {
     font-size: 1.4rem;
   }
 }
-
+@media (max-width: 575.98px) {
+  .hero-float--top-right {
+    left: -30%;
+  }
+  .hero-float--mid-left {
+    left: -30%;
+  }
+  .hero-float--bottom-left {
+    right: -30%;
+  }
+  .hero-float--top-left {
+    right: -31%;
+  }
+}
 .carousel-item {
   width: 100%;
   overflow: hidden;
