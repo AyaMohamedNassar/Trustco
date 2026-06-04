@@ -78,7 +78,7 @@ const SERVICES = {
       },
     ],
   },
-  "metal-curtains": {
+  "venetian-blinds": {
     name: "ستائر معدنية",
     nameShort: "معدنية",
     desc: "ستائر معدنية عصرية توفر تحكماً ممتازاً في الضوء مع مظهر صناعي أنيق يناسب المكاتب والمحلات.",
@@ -86,28 +86,60 @@ const SERVICES = {
     badge: "عصري",
     images: [
       {
-        src: "./images/metal-curtains/Curtains-1.webp",
+        src: "./images/venetian-blinds/Curtains-1.webp",
         caption: "ستائر معدنية – نموذج 1",
       },
       {
-        src: "./images/metal-curtains/Curtains-2.jpg",
+        src: "./images/venetian-blinds/Curtains-2.jpg",
         caption: "ستائر معدنية – نموذج 2",
       },
       {
-        src: "./images/metal-curtains/Curtains-3.png",
+        src: "./images/venetian-blinds/Curtains-3.png",
         caption: "ستائر معدنية – نموذج 3",
       },
       {
-        src: "./images/metal-curtains/Curtains-4.webp",
+        src: "./images/venetian-blinds/Curtains-4.webp",
         caption: "ستائر معدنية – نموذج 4",
       },
       {
-        src: "./images/metal-curtains/OIP.webp",
+        src: "./images/venetian-blinds/OIP.webp",
         caption: "ستائر معدنية – نموذج 5",
       },
       {
-        src: "./images/metal-curtains/Curtains-1.webp",
+        src: "./images/venetian-blinds/Curtains-1.webp",
         caption: "ستائر معدنية – نموذج 6",
+      },
+    ],
+  },
+  "sliced-metal-roofs": {
+    name: "شرائح الأسقف المعدنية",
+    nameShort: "معدنية",
+    desc: "شرائح الأسقف المعدنية عصرية توفر تحكماً ممتازاً في الضوء مع مظهر صناعي أنيق يناسب المكاتب والمحلات.",
+    icon: "fa-table-columns",
+    images: [
+      {
+        src: "./images/sliced-metal-roofs/Roof-1.webp",
+        caption: "شرائح الأسقف المعدنية – نموذج 1",
+      },
+      {
+        src: "./images/sliced-metal-roofs/Roof-2.jpg",
+        caption: "شرائح الأسقف المعدنية – نموذج 2",
+      },
+      {
+        src: "./images/sliced-metal-roofs/Roof-3.png",
+        caption: "شرائح الأسقف المعدنية – نموذج 3",
+      },
+      {
+        src: "./images/sliced-metal-roofs/Roof-4.webp",
+        caption: "شرائح الأسقف المعدنية – نموذج 4",
+      },
+      {
+        src: "./images/sliced-metal-roofs/OIP.webp",
+        caption: "شرائح الأسقف المعدنية – نموذج 5",
+      },
+      {
+        src: "./images/sliced-metal-roofs/Roof-1.webp",
+        caption: "شرائح الأسقف المعدنية – نموذج 6",
       },
     ],
   },
@@ -276,6 +308,552 @@ const SERVICES = {
       },
     ],
   },
+  "blackout-curtains": {
+    name: "ستائر بلاك أوت",
+    nameShort: "بلاك أوت",
+    desc: "ستائر بلاك أوت فاخرة تمنع دخول الضوء وتوفر الخصوصية المطلوبة، مثالية للمكاتب والغرف.",
+    icon: "fa-moon",
+    badge: "الأكثر طلباً",
+    images: [
+      {
+        src: "./images/blackout-curtains/Curtains-1.webp",
+        caption: "ستائر بلاك أوت – نموذج 1",
+      },
+      {
+        src: "./images/blackout-curtains/Curtains-2.jpg",
+        caption: "ستائر بلاك أوت – نموذج 2",
+      },
+      {
+        src: "./images/blackout-curtains/Curtains-3.png",
+        caption: "ستائر بلاك أوت – نموذج 3",
+      },
+      {
+        src: "./images/blackout-curtains/Curtains-4.webp",
+        caption: "ستائر بلاك أوت – نموذج 4",
+      },
+      {
+        src: "./images/blackout-curtains/OIP.webp",
+        caption: "ستائر بلاك أوت – نموذج 5",
+      },
+      {
+        src: "./images/blackout-curtains/Curtains-2.jpg",
+        caption: "ستائر بلاك أوت – نموذج 6",
+      },
+    ],
+  },
+  "double-curtains": {
+    name: "ستائر مزدوجة",
+    nameShort: "مزدوجة",
+    desc: "ستائر مزدوجة فاخرة تمنع دخول الضوء وتوفر الخصوصية المطلوبة، مثالية للمكاتب والغرف.",
+    icon: "fa-moon",
+    badge: "الأكثر طلباً",
+    images: [
+      {
+        src: "./images/double-curtains/Curtains-1.webp",
+        caption: "ستائر مزدوجة – نموذج 1",
+      },
+      {
+        src: "./images/double-curtains/Curtains-2.jpg",
+        caption: "ستائر مزدوجة – نموذج 2",
+      },
+      {
+        src: "./images/double-curtains/Curtains-3.png",
+        caption: "ستائر مزدوجة   – نموذج 3",
+      },
+      {
+        src: "./images/double-curtains/Curtains-4.webp",
+        caption: "ستائر مزدوجة – نموذج 4",
+      },
+      {
+        src: "./images/double-curtains/OIP.webp",
+        caption: "ستائر مزدوجة – نموذج 5",
+      },
+      {
+        src: "./images/double-curtains/Curtains-2.jpg",
+        caption: "ستائر مزدوجة – نموذج 6",
+      },
+    ],
+  },
+  "wooden-alternative": {
+    name: "ستائر بديل الخشب",
+    nameShort: "بديل الخشب",
+    desc: "ستائر بديل الخشب فاخرة تجمع بين المتانة والأناقة، مثالية لتعزيز جمالية مساحاتك.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/wooden-alternative/Curtains-1.webp",
+        caption: "ستائر بديل الخشب – نموذج 1",
+      },
+      {
+        src: "./images/wooden-alternative/Curtains-2.jpg",
+        caption: "ستائر بديل الخشب – نموذج 2",
+      },
+      {
+        src: "./images/wooden-alternative/Curtains-3.png",
+        caption: "ستائر بديل الخشب – نموذج 3",
+      },
+      {
+        src: "./images/wooden-alternative/Curtains-4.webp",
+        caption: "ستائر بديل الخشب – نموذج 4",
+      },
+      {
+        src: "./images/wooden-alternative/OIP.webp",
+        caption: "ستائر بديل الخشب – نموذج 5",
+      },
+      {
+        src: "./images/wooden-alternative/Curtains-2.jpg",
+        caption: "ستائر بديل الخشب – نموذج 6",
+      },
+    ],
+  },
+  "japanese-curtains": {
+    name: "ستائر يابانية",
+    nameShort: "يابانية",
+    desc: "ستائر يابانية فاخرة تجمع بين المتانة والأناقة، مثالية لتعزيز جمالية مساحاتك.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/japanese-curtains/Curtains-1.webp",
+        caption: "ستائر يابانية – نموذج 1",
+      },
+      {
+        src: "./images/japanese-curtains/Curtains-2.jpg",
+        caption: "ستائر يابانية – نموذج 2",
+      },
+      {
+        src: "./images/japanese-curtains/Curtains-3.png",
+        caption: "ستائر يابانية – نموذج 3",
+      },
+      {
+        src: "./images/japanese-curtains/Curtains-4.webp",
+        caption: "ستائر يابانية – نموذج 4",
+      },
+      {
+        src: "./images/japanese-curtains/OIP.webp",
+        caption: "ستائر يابانية – نموذج 5",
+      },
+      {
+        src: "./images/japanese-curtains/Curtains-2.jpg",
+        caption: "ستائر يابانية – نموذج 6",
+      },
+    ],
+  },
+  "stage-blinds": {
+    name: "ستائر المسرح",
+    nameShort: "المسرح",
+    desc: "ستائر المسرح فاخرة تجمع بين المتانة والأناقة، مثالية لتعزيز جمالية مساحاتك.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/stage-blinds/Curtains-1.webp",
+        caption: "ستائر المسرح – نموذج 1",
+      },
+      {
+        src: "./images/stage-blinds/Curtains-2.jpg",
+        caption: "ستائر المسرح – نموذج 2",
+      },
+      {
+        src: "./images/stage-blinds/Curtains-3.png",
+        caption: "ستائر المسرح – نموذج 3",
+      },
+      {
+        src: "./images/stage-blinds/Curtains-4.webp",
+        caption: "ستائر المسرح – نموذج 4",
+      },
+      {
+        src: "./images/stage-blinds/OIP.webp",
+        caption: "ستائر المسرح – نموذج 5",
+      },
+      {
+        src: "./images/stage-blinds/Curtains-2.jpg",
+        caption: "ستائر المسرح – نموذج 6",
+      },
+    ],
+  },
+  bamboo: {
+    name: "ستائر البامبو",
+    nameShort: "البامبو",
+    desc: "ستائر البامبو فاخرة تجمع بين المتانة والأناقة، مثالية لتعزيز جمالية مساحاتك.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/bamboo/Curtains-1.webp",
+        caption: "ستائر البامبو – نموذج 1",
+      },
+      {
+        src: "./images/bamboo/Curtains-2.jpg",
+        caption: "ستائر البامبو – نموذج 2",
+      },
+      {
+        src: "./images/bamboo/Curtains-3.png",
+        caption: "ستائر البامبو – نموذج 3",
+      },
+      {
+        src: "./images/bamboo/Curtains-4.webp",
+        caption: "ستائر البامبو – نموذج 4",
+      },
+      {
+        src: "./images/bamboo/OIP.webp",
+        caption: "ستائر البامبو – نموذج 5",
+      },
+      {
+        src: "./images/bamboo/Curtains-2.jpg",
+        caption: "ستائر البامبو – نموذج 6",
+      },
+    ],
+  },
+  "roman-shade": {
+    name: "الستائر الرومانية",
+    nameShort: "الرومانية",
+    desc: "الستائر الرومانية فاخرة تجمع بين المتانة والأناقة، مثالية لتعزيز جمالية مساحاتك.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/roman-shade/Curtains-1.webp",
+        caption: "الستائر الرومانية – نموذج 1",
+      },
+      {
+        src: "./images/roman-shade/Curtains-2.jpg",
+        caption: "الستائر الرومانية – نموذج 2",
+      },
+      {
+        src: "./images/roman-shade/Curtains-3.png",
+        caption: "الستائر الرومانية – نموذج 3",
+      },
+      {
+        src: "./images/roman-shade/Curtains-4.webp",
+        caption: "الستائر الرومانية – نموذج 4",
+      },
+      {
+        src: "./images/roman-shade/OIP.webp",
+        caption: "الستائر الرومانية – نموذج 5",
+      },
+      {
+        src: "./images/roman-shade/Curtains-2.jpg",
+        caption: "الستائر الرومانية – نموذج 6",
+      },
+    ],
+  },
+  "stone-alternative": {
+    name: "بديل الحجر",
+    nameShort: "الحجر",
+    desc: "بديل الحجر هو خيار مثالي لمن يبحثون عن مظهر الحجر الطبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/stone-alternative/Curtains-1.webp",
+        caption: "بديل الحجر – نموذج 1",
+      },
+      {
+        src: "./images/stone-alternative/Curtains-2.jpg",
+        caption: "بديل الحجر – نموذج 2",
+      },
+      {
+        src: "./images/stone-alternative/Curtains-3.png",
+        caption: "بديل الحجر – نموذج 3",
+      },
+      {
+        src: "./images/stone-alternative/Curtains-4.webp",
+        caption: "بديل الحجر – نموذج 4",
+      },
+      {
+        src: "./images/stone-alternative/OIP.webp",
+        caption: "بديل الحجر – نموذج 5",
+      },
+      {
+        src: "./images/stone-alternative/Curtains-2.jpg",
+        caption: "بديل الحجر – نموذج 6",
+      },
+    ],
+  },
+  spc: {
+    name: " الباركية ",
+    nameShort: "الباركية",
+    desc: "الباركية هي خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/spc/Curtains-1.webp",
+        caption: " الباركية – نموذج 1",
+      },
+      {
+        src: "./images/spc/Curtains-2.jpg",
+        caption: " الباركية – نموذج 2",
+      },
+      {
+        src: "./images/spc/Curtains-3.png",
+        caption: " الباركية – نموذج 3",
+      },
+      {
+        src: "./images/spc/Curtains-4.webp",
+        caption: " الباركية – نموذج 4",
+      },
+      {
+        src: "./images/spc/OIP.webp",
+        caption: " الباركية – نموذج 5",
+      },
+      {
+        src: "./images/spc/Curtains-2.jpg",
+        caption: " الباركية – نموذج 6",
+      },
+    ],
+  },
+  "external-curtains": {
+    name: " ستائر السحابات الخارجية ",
+    nameShort: "السحابات الخارجية",
+    desc: "ستائر السحابات الخارجية هي خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/external-curtains/Curtains-1.webp",
+        caption: " ستائر السحابات الخارجية – نموذج 1",
+      },
+      {
+        src: "./images/external-curtains/Curtains-2.jpg",
+        caption: " ستائر السحابات الخارجية – نموذج 2",
+      },
+      {
+        src: "./images/external-curtains/Curtains-3.png",
+        caption: " ستائر السحابات الخارجية – نموذج 3",
+      },
+      {
+        src: "./images/external-curtains/Curtains-4.webp",
+        caption: " ستائر السحابات الخارجية – نموذج 4",
+      },
+      {
+        src: "./images/external-curtains/OIP.webp",
+        caption: " ستائر السحابات الخارجية – نموذج 5",
+      },
+      {
+        src: "./images/external-curtains/Curtains-2.jpg",
+        caption: " ستائر السحابات الخارجية – نموذج 6",
+      },
+    ],
+  },
+  "hospital-curtains": {
+    name: " ستائر المستشفيات ",
+    nameShort: "المستشفيات",
+    desc: "ستائر المستشفيات هي خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/hospital-curtains/Curtains-1.webp",
+        caption: " ستائر المستشفيات – نموذج 1",
+      },
+      {
+        src: "./images/hospital-curtains/Curtains-2.jpg",
+        caption: " ستائر المستشفيات – نموذج 2",
+      },
+      {
+        src: "./images/hospital-curtains/Curtains-3.png",
+        caption: " ستائر المستشفيات – نموذج 3",
+      },
+      {
+        src: "./images/hospital-curtains/Curtains-4.webp",
+        caption: " ستائر المستشفيات – نموذج 4",
+      },
+      {
+        src: "./images/hospital-curtains/OIP.webp",
+        caption: " ستائر المستشفيات – نموذج 5",
+      },
+      {
+        src: "./images/hospital-curtains/Curtains-2.jpg",
+        caption: " ستائر المستشفيات – نموذج 6",
+      },
+    ],
+  },
+  "refri-freezers-curtains": {
+    name: " ستائر الثلاجات والمستودعات ",
+    nameShort: "المستودعات",
+    desc: "ستائر الثلاجات والمستودعات هي خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/refri-freezers-curtains/Curtains-1.webp",
+        caption: " ستائر الثلاجات والمستودعات – نموذج 1",
+      },
+      {
+        src: "./images/refri-freezers-curtains/Curtains-2.jpg",
+        caption: " ستائر الثلاجات والمستودعات – نموذج 2",
+      },
+      {
+        src: "./images/refri-freezers-curtains/Curtains-3.png",
+        caption: " ستائر الثلاجات والمستودعات – نموذج 3",
+      },
+      {
+        src: "./images/refri-freezers-curtains/Curtains-4.webp",
+        caption: " ستائر الثلاجات والمستودعات – نموذج 4",
+      },
+      {
+        src: "./images/refri-freezers-curtains/OIP.webp",
+        caption: " ستائر الثلاجات والمستودعات – نموذج 5",
+      },
+      {
+        src: "./images/refri-freezers-curtains/Curtains-2.jpg",
+        caption: " ستائر الثلاجات والمستودعات – نموذج 6",
+      },
+    ],
+  },
+  "roman-rails": {
+    name: "السلك الروماني",
+    nameShort: "المستودعات",
+    desc: "السلك الروماني هو خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/roman-rails/Curtains-1.webp",
+        caption: " السلك الروماني – نموذج 1",
+      },
+      {
+        src: "./images/roman-rails/Curtains-2.jpg",
+        caption: " السلك الروماني – نموذج 2",
+      },
+      {
+        src: "./images/roman-rails/Curtains-3.png",
+        caption: " السلك الروماني – نموذج 3",
+      },
+      {
+        src: "./images/roman-rails/Curtains-4.webp",
+        caption: " السلك الروماني – نموذج 4",
+      },
+      {
+        src: "./images/roman-rails/OIP.webp",
+        caption: " السلك الروماني – نموذج 5",
+      },
+      {
+        src: "./images/roman-rails/Curtains-2.jpg",
+        caption: " السلك الروماني – نموذج 6",
+      },
+    ],
+  },
+  "glydea-rails": {
+    name: "السلك الجلايا",
+    nameShort: "الجلايا",
+    desc: "السلك الجلايا هو خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/glydea-rails/Curtains-1.webp",
+        caption: " السلك الجلايا – نموذج 1",
+      },
+      {
+        src: "./images/glydea-rails/Curtains-2.jpg",
+        caption: " السلك الجلايا – نموذج 2",
+      },
+      {
+        src: "./images/glydea-rails/Curtains-3.png",
+        caption: " السلك الجلايا – نموذج 3",
+      },
+      {
+        src: "./images/glydea-rails/Curtains-4.webp",
+        caption: " السلك الجلايا – نموذج 4",
+      },
+      {
+        src: "./images/glydea-rails/OIP.webp",
+        caption: " السلك الجلايا – نموذج 5",
+      },
+      {
+        src: "./images/glydea-rails/Curtains-2.jpg",
+        caption: " السلك الجلايا – نموذج 6",
+      },
+    ],
+  },
+  "american-rails": {
+    name: "السلك الأمريكي",
+    nameShort: "الأمريكي",
+    desc: "السلك الأمريكي هو خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/american-rails/Curtains-1.webp",
+        caption: " السلك الأمريكي – نموذج 1",
+      },
+      {
+        src: "./images/american-rails/Curtains-2.jpg",
+        caption: " السلك الأمريكي – نموذج 2",
+      },
+      {
+        src: "./images/american-rails/Curtains-3.png",
+        caption: " السلك الأمريكي – نموذج 3",
+      },
+      {
+        src: "./images/american-rails/Curtains-4.webp",
+        caption: " السلك الأمريكي – نموذج 4",
+      },
+      {
+        src: "./images/american-rails/OIP.webp",
+        caption: " السلك الأمريكي – نموذج 5",
+      },
+      {
+        src: "./images/american-rails/Curtains-2.jpg",
+        caption: " السلك الأمريكي – نموذج 6",
+      },
+    ],
+  },
+  "motors-blinds": {
+    name: "الستائر الكهربائية",
+    nameShort: "الكهربائية",
+    desc: "الستائر الكهربائية هي خيار مثالي لمن يبحثون عن مظهر حجر طبيعي دون الحاجة إلى صيانة عالية أو تكلفة مرتفعة.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/motors-blinds/Curtains-1.webp",
+        caption: " الستائر الكهربائية – نموذج 1",
+      },
+      {
+        src: "./images/motors-blinds/Curtains-2.jpg",
+        caption: " الستائر الكهربائية – نموذج 2",
+      },
+      {
+        src: "./images/motors-blinds/Curtains-3.png",
+        caption: " الستائر الكهربائية – نموذج 3",
+      },
+      {
+        src: "./images/motors-blinds/Curtains-4.webp",
+        caption: " الستائر الكهربائية – نموذج 4",
+      },
+      {
+        src: "./images/motors-blinds/OIP.webp",
+        caption: " الستائر الكهربائية – نموذج 5",
+      },
+      {
+        src: "./images/motors-blinds/Curtains-2.jpg",
+        caption: " الستائر الكهربائية – نموذج 6",
+      },
+    ],
+  },
+  "alzahra-curtains-engine": {
+    name: "محركات الزهراء",
+    nameShort: "الكهربائية",
+    desc: "محركات الزهراء للتخلص نهائيا من الكابلات والخيوط اللتي تتشابك فيما بينها وتوفير مظهر أنيق وعصري.",
+    icon: "fa-tree",
+    images: [
+      {
+        src: "./images/alzahra-curtains-engine/Curtains-1.webp",
+        caption: " الستائر الكهربائية – نموذج 1",
+      },
+      {
+        src: "./images/alzahra-curtains-engine/Curtains-2.jpg",
+        caption: " الستائر الكهربائية – نموذج 2",
+      },
+      {
+        src: "./images/alzahra-curtains-engine/Curtains-3.png",
+        caption: " الستائر الكهربائية – نموذج 3",
+      },
+      {
+        src: "./images/alzahra-curtains-engine/Curtains-4.webp",
+        caption: " الستائر الكهربائية – نموذج 4",
+      },
+      {
+        src: "./images/alzahra-curtains-engine/OIP.webp",
+        caption: " الستائر الكهربائية – نموذج 5",
+      },
+      {
+        src: "./images/alzahra-curtains-engine/Curtains-2.jpg",
+        caption: " الستائر الكهربائية – نموذج 6",
+      },
+    ],
+  },
 };
 
 // ══════════════════════════════════════════════════
@@ -371,7 +949,6 @@ service.images.forEach((item, idx) => {
 
   grid.appendChild(card);
 });
-
 
 let currentIdx = 0;
 const lb = document.getElementById("lightbox");

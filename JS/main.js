@@ -20,7 +20,7 @@
 
   // Make every image in the page clickable (except logo & carousel nav)
   const images = document.querySelectorAll(
-    "img:not(.navbar-brand img):not(.carousel-control img)",
+    "img:not(.navbar-brand img):not(.carousel-item img):not(.mega-menu img)"
   );
 
   images.forEach((img) => {
