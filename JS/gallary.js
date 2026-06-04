@@ -1,8 +1,4 @@
-// ══════════════════════════════════════════════════
-//  SERVICE DATA — edit images arrays per service
-//  Image paths are relative to your project root.
-//  Add as many images as you have for each service.
-// ══════════════════════════════════════════════════
+
 const SERVICES = {
   "accordion-plastic": {
     name: "أبواب اكورديون بلاستيك",
@@ -856,9 +852,7 @@ const SERVICES = {
   },
 };
 
-// ══════════════════════════════════════════════════
-//  INIT
-// ══════════════════════════════════════════════════
+
 const params = new URLSearchParams(window.location.search);
 const serviceKey = params.get("service") || "roll-curtains";
 const service = SERVICES[serviceKey] || SERVICES["roll-curtains"];
