@@ -814,7 +814,7 @@ img {
 
 @media (max-width: 575.98px) {
   .hero-text-panel {
-    padding: 3rem 1.25rem 2rem;
+    padding: 3rem 1.25rem;
   }
   .hero-orbit-wrap {
     width: 240px;
