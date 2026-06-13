@@ -1559,6 +1559,7 @@ img {
 .cr-controls {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
   background: rgba(220, 220, 218, 0.55);
   backdrop-filter: blur(10px);
@@ -1569,7 +1570,11 @@ img {
   margin-top: 1rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
-
+@media (max-width: 767.89px) {
+  .cr-controls {
+    min-width: 50%;
+  }
+}
 .cr-btn-nav {
   background: none;
   border: none;
