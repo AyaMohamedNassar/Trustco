@@ -1,70 +1,91 @@
-/*
- * ─── EmailJS Setup ───────────────────────────────────────────────────────
- * 1. Sign up free at https://www.emailjs.com
- * 2. Add an Email Service (Gmail etc.)  → copy the Service ID
- * 3. Create a Template with variables:
- *      {{from_name}}  {{from_email}}  {{message}}
- *    Set the "To" field to aya.m.nasar@gmail.com  → copy the Template ID
- * 4. Account → API Keys → copy your Public Key
- * 5. Paste the three values below
- * ─────────────────────────────────────────────────────────────────────────
- */
+// ─── Configuration ────────────────────────────────────────────────────────
+// Point this to where you place send-mail.php on your IIS server
+const MAIL_ENDPOINT = "../send-mail.php";
+// ──────────────────────────────────────────────────────────────────────────
 
-const CONFIG = {
-  EMAILJS_PUBLIC_KEY: "YOUR_PUBLIC_KEY",
-  EMAILJS_SERVICE_ID: "YOUR_SERVICE_ID",
-  EMAILJS_TEMPLATE_ID: "YOUR_TEMPLATE_ID",
-};
+const btnSend = document.getElementById("btn-send");
+const alertBox = document.getElementById("form-alert");
+const fieldName = document.getElementById("sender-name");
+const fieldEmail = document.getElementById("sender-email");
+const fieldMsg = document.getElementById("sender-message");
 
-emailjs.init({ publicKey: CONFIG.EMAILJS_PUBLIC_KEY });
-
-document
-  .getElementById("btn-send")
-  .addEventListener("click", async function () {
-    const name = document.getElementById("sender-name").value.trim();
-    const email = document.getElementById("sender-email").value.trim();
-    const message = document.getElementById("sender-message").value.trim();
-    const btn = this;
-
-    if (!name || !email || !message) {
-      showAlert("يرجى ملء جميع الحقول قبل الإرسال.", "error");
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showAlert("يرجى إدخال بريد إلكتروني صحيح.", "error");
-      return;
-    }
-
-    btn.disabled = true;
-    btn.innerHTML =
-      '<i class="fa-solid fa-spinner fa-spin"></i> جارٍ الإرسال...';
-
-    try {
-      await emailjs.send(
-        CONFIG.EMAILJS_SERVICE_ID,
-        CONFIG.EMAILJS_TEMPLATE_ID,
-        { from_name: name, from_email: email, message, to_email: TO_EMAIL },
-      );
-      showAlert("تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.", "success");
-      document.getElementById("sender-name").value = "";
-      document.getElementById("sender-email").value = "";
-      document.getElementById("sender-message").value = "";
-    } catch (err) {
-      console.error("EmailJS error:", err);
-      showAlert("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.", "error");
-    } finally {
-      btn.disabled = false;
-      btn.innerHTML =
-        '<span class="btn-dot"></span> إرسال الرسالة <i class="fa-solid fa-paper-plane"></i>';
-    }
-  });
-
-function showAlert(msg, type) {
-  const el = document.getElementById("form-alert");
-  el.textContent = msg;
-  el.className = type;
-  el.style.display = "block";
-  setTimeout(() => {
-    el.style.display = "none";
-  }, 5000);
+function showAlert(message, type) {
+  alertBox.textContent = message;
+  alertBox.className = "form-alert form-alert--" + type;
+  alertBox.style.display = "block";
+  alertBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  if (type === "success") {
+    setTimeout(() => {
+      alertBox.style.display = "none";
+    }, 7000);
+  }
 }
+
+function validate() {
+  const name = fieldName.value.trim();
+  const email = fieldEmail.value.trim();
+  const msg = fieldMsg.value.trim();
+
+  if (!name) {
+    showAlert("يرجى إدخال اسمك الكامل.", "error");
+    fieldName.focus();
+    return false;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showAlert("يرجى إدخال بريد إلكتروني صحيح.", "error");
+    fieldEmail.focus();
+    return false;
+  }
+  if (!msg || msg.length < 10) {
+    showAlert("يرجى كتابة رسالتك (10 أحرف على الأقل).", "error");
+    fieldMsg.focus();
+    return false;
+  }
+  return true;
+}
+
+btnSend.addEventListener("click", async function () {
+  if (!validate()) return;
+
+  btnSend.disabled = true;
+
+  btnSend.classList.add("is-loading");
+
+  try {
+    const response = await fetch(MAIL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from_name: fieldName.value.trim(),
+        from_email: fieldEmail.value.trim(),
+        message: fieldMsg.value.trim(),
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      showAlert(
+        "تم إرسال رسالتك بنجاح! سنتواصل معك خلال 24 ساعة. ✓",
+        "success",
+      );
+      fieldName.value = "";
+      fieldEmail.value = "";
+      fieldMsg.value = "";
+    } else {
+      showAlert(
+        data.message || "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.",
+        "error",
+      );
+    }
+  } catch (err) {
+    console.error("Send error:", err);
+    showAlert(
+      "تعذّر الاتصال بالخادم. يرجى التحقق من اتصالك والمحاولة مرة أخرى.",
+      "error",
+    );
+  } finally {
+    btnSend.disabled = false;
+    btnSend.classList.remove("is-loading");
+  }
+});
