@@ -325,13 +325,13 @@ img {
   border-color: var(--primary-color) !important;
   opacity: 0.8;
 }
-
 .contact {
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   bottom: 1.5rem;
+  left: 1.5rem;
   font-size: 1.25rem;
   width: 3rem;
   height: 3rem;
@@ -342,37 +342,63 @@ img {
   box-shadow:
     0px 4px 14px 1px rgb(0 0 0 / 13%),
     1px 4px 4px 0px rgb(0 0 0 / 12%);
+    z-index: 10000;
 }
 .contact a {
   color: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
 }
 .contact:hover {
   background-color: var(--secondary-color) !important;
   color: var(--cream);
   border: 1px solid var(--secondary-color);
+  box-shadow:
+    0px 4px 14px 1px rgb(0 0 0 / 13%),
+    1px 4px 4px 0px rgb(0 0 0 / 12%);
 }
 .whatsapp {
-  left: 0;
-  right: 5rem;
-  font-size: 1.5rem;
+  bottom: 1.5rem;
 }
 .phone {
-  left: 6rem;
+  bottom: 5rem;
 }
+
 @media (max-width: 767.98px) {
-  .whatsapp {
-    right: 1rem;
-  }
-  .phone {
+  .contact {
     left: 1rem;
   }
 }
-/* ══════════════════════════════════════════
-   HERO SPLIT — two-panel redesign
-══════════════════════════════════════════ */
+.arrow-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--primary-color);
+  color: var(--cream);
+  transition: var(--main-transition);
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px 0 #49716b5c;
+  z-index: 10000;
+}
+.arrow-up a {
+  color: var(--cream);
+}
+.arrow-up:hover {
+  background-color: var(--secondary-color) !important;
+  color: var(--cream);
+  border: 1px solid var(--secondary-color);
+  box-shadow:
+    0px 4px 14px 1px rgb(0 0 0 / 13%),
+    1px 4px 4px 0px rgb(0 0 0 / 12%);
+}
 .hero-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
