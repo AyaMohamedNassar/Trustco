@@ -1600,7 +1600,7 @@ img {
 .cr-dots {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .cr-dot {
