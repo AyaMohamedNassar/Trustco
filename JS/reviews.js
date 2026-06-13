@@ -93,7 +93,7 @@
     btnNext.disabled = false;
   }
 
-  /* ── Navigation ─────────────────────────── */
+ 
   function goTo(idx) {
     current = (idx + total) % total;
     applyLayout(current, true);
@@ -147,9 +147,8 @@
     });
   }
 
-  /* ── Keyboard ────────────────────────────── */
   document.addEventListener("keydown", (e) => {
-    // only act when reviews section is in viewport
+
     const section = document.getElementById("reviews");
     if (!section) return;
     const rect = section.getBoundingClientRect();

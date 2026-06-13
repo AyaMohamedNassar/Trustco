@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>معرض الصور - مصنع الثقة</title>
-    <meta name="description" content="اكتشف معرض أعمالنا من الستائر الفاخرة والأبواب العصرية المنفذة في البحرين والسعودية." />
+    <meta
+      name="description"
+      content="اكتشف معرض أعمالنا من الستائر الفاخرة والأبواب العصرية المنفذة في البحرين والسعودية."
+    />
 
     <meta property="og:type" content="website" />
     <meta
@@ -23,6 +26,7 @@
     <meta property="og:locale" content="ar_BH" />
 
     <link rel="icon" href="./images/logo.png" type="image/png" />
+    <link rel="canonical" href="https://trustco.com/service-gallery.html" />
     <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="./CSS/all.min.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
@@ -233,7 +237,6 @@
       </div>
     </nav>
 
-    <!-- ══════════════ HERO ══════════════ -->
     <section class="gallery-hero">
       <div class="container position-relative" style="z-index: 1">
         <nav class="breadcrumb-nav" aria-label="breadcrumb">
@@ -263,39 +266,39 @@
       </div>
     </section>
 
-    <!-- ══════════════ GALLERY ══════════════ -->
-    <section class="gallery-section">
-      <div class="container">
-        <div class="gallery-controls">
-          <p class="gallery-count">
-            عرض <strong id="showing-count">0</strong> صورة من مجموعة
-            <span id="service-name-inline">...</span>
-          </p>
-          <a href="services.html" class="btn btn-sm btn-outline-secondary">
-            <i class="fa-solid fa-arrow-right ms-1"></i> كل الخدمات
-          </a>
+    <main>
+      <section class="gallery-section">
+        <div class="container">
+          <div class="gallery-controls">
+            <p class="gallery-count">
+              عرض <strong id="showing-count">0</strong> صورة من مجموعة
+              <span id="service-name-inline">...</span>
+            </p>
+            <a href="services.html" class="btn btn-sm btn-outline-secondary">
+              <i class="fa-solid fa-arrow-right ms-1"></i> كل الخدمات
+            </a>
+          </div>
+          <div class="gallery-grid" id="gallery-grid">
+            <!-- Cards injected by JS -->
+          </div>
         </div>
-        <div class="gallery-grid" id="gallery-grid">
-          <!-- Cards injected by JS -->
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ══════════════ CTA ══════════════ -->
-    <section class="gallery-cta">
-      <div class="container">
-        <h2>أعجبك ما شاهدته؟</h2>
-        <p>تواصل معنا للحصول على استشارة مجانية وقياس بدون أي التزام</p>
-        <div class="cta-actions">
-          <a href="contact.html" class="btn-cta-primary">
-            احجز موعد مجاني <i class="fa-solid fa-arrow-left"></i>
-          </a>
-          <a href="services.html" class="btn-cta-outline">
-            تصفح باقي الخدمات
-          </a>
+      <section class="gallery-cta">
+        <div class="container">
+          <h2>أعجبك ما شاهدته؟</h2>
+          <p>تواصل معنا للحصول على استشارة مجانية وقياس بدون أي التزام</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn-cta-primary">
+              احجز موعد مجاني <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="services.html" class="btn-cta-outline">
+              تصفح باقي الخدمات
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer id="footer">
       <div class="container">
@@ -303,28 +306,48 @@
           <h3>مصنع الثقة</h3>
 
           <ul class="social">
-            <li class="instegram">
+            <li class="instagram">
               <a
                 href="https://www.instagram.com/trust_factory?igsh=MW9wdTk3YXZhNHdtbA=="
-                class="instegram"
-                description="Instegram"
+                class="instagram"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" aria-hidden="true"></i>
               </a>
             </li>
             <li class="facebook">
-              <a href="#" class="facebook" description="Facebook">
-                <i class="fab fa-facebook-f"></i>
+              <a
+                href="#"
+                class="facebook"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
               </a>
             </li>
             <li class="twitter">
-              <a href="#" class="twitter" description="X">
-                <i class="fab fa-x-twitter"></i>
+              <a
+                href="#"
+                class="twitter"
+                aria-label="X (Twitter)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-x-twitter" aria-hidden="true"></i>
               </a>
             </li>
             <li class="youtube">
-              <a href="#" class="youtube" description="YouTube">
-                <i class="fab fa-youtube"></i>
+              <a
+                href="#"
+                class="youtube"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
               </a>
             </li>
           </ul>
@@ -381,7 +404,7 @@
       <p class="copyright">مصنع الثقة — البحرين 2026 &copy;</p>
     </footer>
 
-   <div>
+    <div>
       <a
         id="whatsapp-btn"
         target="_blank"
@@ -399,11 +422,13 @@
         <i class="fa-solid fa-phone"></i>
       </a>
     </div>
+
     <div class="arrow-up">
-      <a href="#mainNavbar"> <i class="fa-solid fa-arrow-up"></i></a>
+      <a href="#mainNavbar" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
     </div>
 
-    <!-- ══════════════ LIGHTBOX ══════════════ -->
     <div id="lightbox" role="dialog" aria-modal="true" aria-label="عارض الصور">
       <button class="lb-close" id="lb-close" aria-label="إغلاق">
         <i class="fa-solid fa-xmark"></i>
