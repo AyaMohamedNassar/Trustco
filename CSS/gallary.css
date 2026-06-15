@@ -280,7 +280,7 @@
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
   background: rgba(10, 15, 30, 0.96);
   align-items: center;
   justify-content: center;
