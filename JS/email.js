@@ -1,7 +1,4 @@
-// ─── Configuration ────────────────────────────────────────────────────────
-// Point this to where you place send-mail.php on your IIS server
 const MAIL_ENDPOINT = "../send-mail.php";
-// ──────────────────────────────────────────────────────────────────────────
 
 const btnSend = document.getElementById("btn-send");
 const alertBox = document.getElementById("form-alert");

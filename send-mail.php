@@ -20,6 +20,7 @@ define('SMTP_HOST',       $_ENV['SMTP_HOST']);
 define('SMTP_PORT', (int) $_ENV['SMTP_PORT']);
 define('SMTP_USER',       $_ENV['SMTP_USER']);
 define('SMTP_PASS',       $_ENV['SMTP_PASS']);
+define('SMTP_FROM_EMAIL', $_ENV['SMTP_FROM_EMAIL']);
 define('ALLOWED_ORIGIN',  $_ENV['ALLOWED_ORIGIN']);
 // ──────────────────────────────────────────────────────────────────────────
 
@@ -118,46 +119,46 @@ try {
     $mail->CharSet    = 'UTF-8';
 
     // Recipients
-    $mail->setFrom(SMTP_USER, RECIPIENT_NAME);
-    $mail->addAddress(RECIPIENT_EMAIL, RECIPIENT_NAME);
-    $mail->addReplyTo($email, $name);  
+    $mail->setFrom(SMTP_FROM_EMAIL, RECIPIENT_NAME);
+    $mail->addAddress(RECIPIENT_EMAIL, RECIPIENT_NAME);;
+    $mail->addReplyTo($email, $name);
 
     // Content
     $mail->isHTML(true);
     $mail->Subject = "رسالة جديدة من موقع مصنع الثقة — {$name}";
     $mail->Body    = "
-<!DOCTYPE html>
-<html dir='rtl' lang='ar'>
-<head><meta charset='UTF-8'></head>
-<body style='font-family: Arial, sans-serif; direction: rtl; background: #f9f9f9; padding: 24px;'>
-  <div style='max-width: 560px; margin: 0 auto; background: #fff; border-radius: 8px;
-              border: 1px solid #e0e0e0; overflow: hidden;'>
-    <div style='background: #1a1a2e; padding: 24px; text-align: center;'>
-      <h2 style='color: #fff; margin: 0; font-size: 18px;'>رسالة جديدة من الموقع</h2>
-      <p style='color: #aaa; margin: 4px 0 0; font-size: 13px;'>مصنع الثقة — نموذج التواصل</p>
-    </div>
-    <div style='padding: 24px;'>
-      <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>
-        <tr>
-          <td style='padding: 10px 0; color: #888; width: 130px; vertical-align: top;'>الاسم</td>
-          <td style='padding: 10px 0; color: #222; font-weight: bold;'>{$name}</td>
-        </tr>
-        <tr style='border-top: 1px solid #f0f0f0;'>
-          <td style='padding: 10px 0; color: #888; vertical-align: top;'>البريد الإلكتروني</td>
-          <td style='padding: 10px 0; color: #222;'><a href='mailto:{$email}' style='color:#1a73e8;'>{$email}</a></td>
-        </tr>
-        <tr style='border-top: 1px solid #f0f0f0;'>
-          <td style='padding: 10px 0; color: #888; vertical-align: top;'>الرسالة</td>
-          <td style='padding: 10px 0; color: #222; line-height: 1.7;'>" . nl2br($message) . "</td>
-        </tr>
-      </table>
-    </div>
-    <div style='background: #f5f5f5; padding: 14px 24px; font-size: 12px; color: #aaa; text-align: center;'>
-      أُرسلت هذه الرسالة من نموذج التواصل على موقع مصنع الثقة
-    </div>
-  </div>
-</body>
-</html>";
+        <!DOCTYPE html>
+        <html dir='rtl' lang='ar'>
+        <head><meta charset='UTF-8'></head>
+        <body style='font-family: Arial, sans-serif; direction: rtl; background: #f9f9f9; padding: 24px;'>
+        <div style='max-width: 560px; margin: 0 auto; background: #fff; border-radius: 8px;
+                    border: 1px solid #e0e0e0; overflow: hidden;'>
+            <div style='background: #1a1a2e; padding: 24px; text-align: center;'>
+            <h2 style='color: #fff; margin: 0; font-size: 18px;'>رسالة جديدة من الموقع</h2>
+            <p style='color: #aaa; margin: 4px 0 0; font-size: 13px;'>مصنع الثقة — نموذج التواصل</p>
+            </div>
+            <div style='padding: 24px;'>
+            <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>
+                <tr>
+                <td style='padding: 10px 0; color: #888; width: 130px; vertical-align: top;'>الاسم</td>
+                <td style='padding: 10px 0; color: #222; font-weight: bold;'>{$name}</td>
+                </tr>
+                <tr style='border-top: 1px solid #f0f0f0;'>
+                <td style='padding: 10px 0; color: #888; vertical-align: top;'>البريد الإلكتروني</td>
+                <td style='padding: 10px 0; color: #222;'><a href='mailto:{$email}' style='color:#1a73e8;'>{$email}</a></td>
+                </tr>
+                <tr style='border-top: 1px solid #f0f0f0;'>
+                <td style='padding: 10px 0; color: #888; vertical-align: top;'>الرسالة</td>
+                <td style='padding: 10px 0; color: #222; line-height: 1.7;'>" . nl2br($message) . "</td>
+                </tr>
+            </table>
+            </div>
+            <div style='background: #f5f5f5; padding: 14px 24px; font-size: 12px; color: #aaa; text-align: center;'>
+            أُرسلت هذه الرسالة من نموذج التواصل على موقع مصنع الثقة
+            </div>
+        </div>
+        </body>
+        </html>";
 
     $mail->AltBody = "اسم المرسل: {$name}\nالبريد: {$email}\n\nالرسالة:\n{$message}";
 

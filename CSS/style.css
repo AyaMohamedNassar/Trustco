@@ -99,7 +99,7 @@ img {
 }
 .navbar-brand img {
   display: block;
-  height: 100px;
+  height: 90px;
   width: auto;
 }
 .nav-link {
@@ -177,7 +177,7 @@ img {
     gap: 18px;
   }
 }
-@media (min-width:1200px) and (max-width: 1400.98px) {
+@media (min-width: 1200px) and (max-width: 1400.98px) {
   .mega-menu {
     gap: 20px;
   }
@@ -227,7 +227,7 @@ img {
     padding: 10px 12px;
   }
 }
-@media (min-width:1200px) and (max-width: 1400.98px) {
+@media (min-width: 1200px) and (max-width: 1400.98px) {
   .mega-menu .links > li {
     font-size: 14px;
     padding: 11px 13px;
@@ -336,11 +336,11 @@ img {
   border-color: var(--primary-color) !important;
   transition: var(--main-transition);
   font-weight: 600;
-  padding: 0.5rem 1.25rem;
 }
 .btn-primary a {
   color: var(--cream);
   transition: var(--main-transition);
+  padding: 0.25rem 1rem;
 }
 .btn-primary:hover a {
   color: var(--primary-color) !important;
@@ -1856,7 +1856,7 @@ footer {
 }
 footer .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 40px;
 }
 footer h3 {
@@ -1885,7 +1885,7 @@ footer .social a {
 footer .social a .svg-inline--fa {
   font-size: 20px;
 }
-footer .social li.instegram:hover {
+footer .social li.instagram:hover {
   background-color: rgb(251, 31, 155);
 }
 footer .social li.facebook:hover {
@@ -1902,10 +1902,10 @@ footer .text {
   margin: 15px 0 40px;
   color: var(--text);
 }
-
 footer .links li {
   direction: rtl;
   padding-bottom: 15px;
+  text-align: center;
   transition: var(--main-transition);
 }
 footer .links li:not(:first-child) {
@@ -1950,27 +1950,12 @@ footer .line .info span {
   padding-bottom: 10px;
 }
 @media (max-width: 767.98px) {
-  .footer-gallery {
-    padding-bottom: 1rem;
-  }
   footer .box .line {
     flex-direction: column;
   }
   footer .line .svg-inline--fa {
     padding-bottom: 20px;
   }
-}
-.footer-gallery img {
-  border: 15px solid white;
-  box-shadow:
-    0px 12px 20px 0px rgb(0 0 0 / 13%),
-    0px 2px 4px 0px rgb(0 0 0 / 12%);
-}
-
-footer .footer-gallery img {
-  width: 78px;
-  border: 3px solid white;
-  margin: 2px;
 }
 .copyright {
   text-align: center;
@@ -1979,11 +1964,9 @@ footer .footer-gallery img {
   font-size: 16px;
   border-top: 1px solid var(--border-color);
 }
-/* ── Lightbox ─────────────────────────────────── */
 .lightbox-trigger {
   cursor: zoom-in;
 }
-
 .lightbox {
   display: none;
   position: fixed;
