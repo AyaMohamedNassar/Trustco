@@ -5,7 +5,7 @@
 
 ## Core Pages / الصفحات الرئيسية
 
-- [Homepage / الرئيسية](https://trustco.com/index.html): Overview of services, trust guarantees, and key performance stats (2500+ completed projects, 25+ years of experience).
-- [About Us / من نحن](https://trustco.com/about.html): Company history, factory details (6000 m² factory space, 20+ product types), and our commitment to quality.
-- [Our Products / منتجاتنا](https://trustco.com/services.html): Full catalog of premium curtains (Zebra, Roller, Wooden blinds, Blackout) and modern doors (Accordion doors and more).
-- [Contact Us / تواصل معنا](https://trustco.com/contact.html): Contact information, location details in Hamala, Bahrain (Building 975, Road 1216, Block 1012), phone support (+973 1758 0191), email (Trust.Fact@hotmail.com), operating hours (Saturday – Thursday: 9:00 – 17:00), and our inquiry form.
+- [Homepage / الرئيسية](https://trust-co.net/index.html): Overview of services, trust guarantees, and key performance stats (2500+ completed projects, 25+ years of experience).
+- [About Us / من نحن](https://trust-co.net/about.html): Company history, factory details (6000 m² factory space, 20+ product types), and our commitment to quality.
+- [Our Products / منتجاتنا](https://trust-co.net/services.html): Full catalog of premium curtains (Zebra, Roller, Wooden blinds, Blackout) and modern doors (Accordion doors and more).
+- [Contact Us / تواصل معنا](https://trust-co.net/contact.html): Contact information, location details in Hamala, Bahrain (Building 975, Road 1216, Block 1012), phone support (+973 1758 0191), email (Trust.Fact@hotmail.com), operating hours (Saturday – Thursday: 9:00 – 17:00), and our inquiry form.
