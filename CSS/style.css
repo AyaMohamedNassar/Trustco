@@ -1572,6 +1572,34 @@ img {
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+.cr-avatar--blue {
+  background: #e0edff;
+  color: #1a4fad;
+}
+.cr-avatar--green {
+  background: #e2f7ee;
+  color: #0d6b45;
+}
+.cr-avatar--orange {
+  background: #fff0e2;
+  color: #9b4b0a;
+}
+.cr-avatar--purple {
+  background: #f5e2ff;
+  color: #7a1aad;
+}
+.cr-avatar--amber {
+  background: #fff3e2;
+  color: #ad5a0a;
+}
+.cr-avatar--teal {
+  background: #e2f5ff;
+  color: #0a6b9b;
+}
+
+.z-1 {
+  z-index: 1;
+}
 
 .cr-author-info {
   display: flex;
@@ -1795,6 +1823,30 @@ img {
   justify-content: center;
   font-size: 18px;
   flex-shrink: 0;
+}
+.wcu-icon--gold {
+  background: #fef3d0;
+  color: #b07c00;
+}
+.wcu-icon--blue {
+  background: #e6f1fb;
+  color: #0c447c;
+}
+.wcu-icon--green {
+  background: #e1f5ee;
+  color: #0f6e56;
+}
+.wcu-icon--rose {
+  background: #fbeaf0;
+  color: #721e3e;
+}
+.wcu-icon--purple {
+  background: #eeedfe;
+  color: #3c3489;
+}
+.wcu-icon--lime {
+  background: #eaf3de;
+  color: #3b6d11;
 }
 .wcu-card h3 {
   font-size: 1.25rem;

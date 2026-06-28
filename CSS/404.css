@@ -149,3 +149,13 @@
   height: 100px;
   position: relative;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.btn-icon-sm {
+  font-size: 18px;
+}

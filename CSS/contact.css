@@ -276,6 +276,15 @@
   font-weight: 600;
   margin-bottom: 16px;
   text-align: center;
+  display: none;
+}
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 #form-alert.success {
   background: #eaf6ec;
@@ -309,7 +318,6 @@
   border: 1px solid #f09595;
 }
 
-/* ── Per-field inline errors ───────────────────────────────────────────── */
 .field-error {
   display: block;
   font-size: 12px;
@@ -333,7 +341,6 @@
   box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.18);
 }
 
-/* ── Loading spinner on submit button ──────────────────────────────────── */
 .btn-send.is-loading {
   pointer-events: none;
 }

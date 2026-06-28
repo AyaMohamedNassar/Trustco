@@ -639,6 +639,17 @@
   font-size: 1.1rem;
   flex-shrink: 0;
 }
+.wcu-i-icon--navy {
+  background: rgba(24, 41, 89, 0.08);
+  color: #182959;
+}
+.wcu-i-icon--gold {
+  background: rgba(249, 183, 31, 0.15);
+  color: #ad7a0a;
+}
+.card-right--padded {
+  padding: 1.25rem;
+}
 
 .wcu-item h5 {
   font-size: 1.25rem;
@@ -658,7 +669,6 @@
   margin: 0;
 }
 
-/* ── CTA Banner ────────────────────────────── */
 .services-cta {
   background: var(--primary-color);
   padding: 4.5rem 0;
@@ -751,8 +761,6 @@
   background: rgba(255, 255, 255, 0.07);
   color: var(--white);
 }
-
-/* ── Scroll Reveal ─────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
