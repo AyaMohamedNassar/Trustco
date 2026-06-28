@@ -1,20 +1,20 @@
 (function () {
   "use strict";
 
-  /* ── Config ─────────────────────────────── */
-  const CARD_WIDTH = 400; // px — max-width of each card slot
-  const CARD_GAP = 32; // px — gap between card centres
-  const AUTOPLAY_MS = 5000; // ms between auto-advances
+  
+  const CARD_WIDTH = 400; 
+  const CARD_GAP = 32; 
+  const AUTOPLAY_MS = 5000; 
   const EASING = "cubic-bezier(0.34, 1.12, 0.64, 1)";
 
-  /* ── DOM ─────────────────────────────────── */
+  
   const track = document.getElementById("cr-track");
   const dotsWrap = document.getElementById("cr-dots");
   const btnPrev = document.getElementById("cr-prev");
   const btnNext = document.getElementById("cr-next");
   const activeName = document.getElementById("cr-active-name");
 
-  if (!track) return; // guard — section not on page
+  if (!track) return; 
 
   const slots = Array.from(track.querySelectorAll(".cr-slot"));
   const cards = Array.from(track.querySelectorAll(".cr-card"));
@@ -23,7 +23,7 @@
   let autoTimer = null;
   let isPaused = false;
 
-  /* ── IntersectionObserver for visibility check (replaces getBoundingClientRect) */
+  
   let isSectionVisible = false;
   const section = document.getElementById("reviews");
   if (section) {
@@ -38,7 +38,7 @@
     visObs.observe(section);
   }
 
-  /* ── Build dots ─────────────────────────── */
+  
   dotsWrap.innerHTML = "";
   slots.forEach((_, i) => {
     const d = document.createElement("button");
@@ -50,27 +50,27 @@
 
   const dots = Array.from(dotsWrap.querySelectorAll(".cr-dot"));
 
-  /* ── Layout calc ─────────────────────────── */
+  
   function applyLayout(idx, animate) {
-    // Batch all style writes together to avoid interleaved read/write reflows
+    
     requestAnimationFrame(() => {
       slots.forEach((slot, i) => {
         const card = slot.querySelector(".cr-card");
         const diff = i - idx;
         const absDiff = Math.abs(diff);
 
-        // position
+        
         const offset = diff * (CARD_WIDTH + CARD_GAP);
         slot.style.setProperty("--offset", offset + "px");
         slot.style.transition = animate
           ? `left 0.7s ${EASING}`
           : "none";
 
-        // active / inactive state
+        
         const isActive = i === idx;
         card.classList.toggle("cr-is-active", isActive);
 
-        // scale + opacity + blur via CSS vars — driven by JS
+        
         const scale = isActive ? 1 : absDiff === 1 ? 0.85 : 0.72;
         const opacity = isActive ? 1 : absDiff === 1 ? 0.5 : 0.3;
         const blur = isActive ? 0 : absDiff === 1 ? 2 : 4;
@@ -85,23 +85,23 @@
           : "none";
       });
 
-      // update dots
+      
       dots.forEach((d, i) => d.classList.toggle("active", i === idx));
 
-      // update name label
+      
       const activeCard = cards[idx];
       const name = activeCard
         ? activeCard.querySelector(".cr-name")?.textContent || ""
         : "";
       if (activeName) activeName.textContent = name;
 
-      // update nav buttons
+      
       btnPrev.disabled = false;
       btnNext.disabled = false;
     });
   }
 
-  /* ── Navigation ─────────────────────────── */
+  
   function goTo(idx) {
     current = (idx + total) % total;
     applyLayout(current, true);
@@ -118,7 +118,7 @@
   btnPrev.addEventListener("click", prev);
   btnNext.addEventListener("click", next);
 
-  /* ── Autoplay ────────────────────────────── */
+  
   function startAutoplay() {
     stopAutoplay();
     autoTimer = setInterval(() => {
@@ -138,7 +138,7 @@
     startAutoplay();
   }
 
-  // pause on hover
+  
   const stageWrap = document.querySelector(".cr-stage-wrap");
   if (stageWrap) {
     stageWrap.addEventListener("mouseenter", () => {
@@ -155,16 +155,16 @@
     });
   }
 
-  /* ── Keyboard ────────────────────────────── */
+  
   document.addEventListener("keydown", (e) => {
-    // Use cached IntersectionObserver flag instead of forced reflow
+    
     if (!isSectionVisible) return;
 
     if (e.key === "ArrowRight") prev();
     if (e.key === "ArrowLeft") next();
   });
 
-  /* ── Touch / swipe ───────────────────────── */
+  
   let touchStartX = null;
   track.addEventListener(
     "touchstart",
@@ -186,20 +186,20 @@
     { passive: true },
   );
 
-  /* ── Click inactive card to activate ─────── */
+  
   slots.forEach((slot, i) => {
     slot.addEventListener("click", () => {
       if (i !== current) goTo(i);
     });
   });
 
-  /* ── Init ────────────────────────────────── */
-  // Run layout without animation first
+  
+  
   applyLayout(current, false);
-  // Then start
+  
   startAutoplay();
 
-  // Re-layout on resize (card offsets may need recalc)
+  
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);

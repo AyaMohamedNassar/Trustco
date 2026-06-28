@@ -24,7 +24,7 @@
   pointer-events: none;
 }
 
-/* decorative diagonal strips */
+
 .about-hero::after {
   content: "";
   position: absolute;
@@ -91,7 +91,7 @@
   font-weight: 500;
 }
 
-/* ── Story Section ─────────────────────────── */
+
 .about-story {
   padding: 5rem 0;
   background-color: var(--cream);
@@ -177,7 +177,7 @@
   font-weight: 500;
 }
 
-/* story image side */
+
 .about-story .story-img-wrap {
   position: relative;
 }
@@ -200,7 +200,7 @@
   display: block;
 }
 
-/* placeholder when no image */
+
 .about-story .story-img-placeholder {
   width: 100%;
   height: 100%;
@@ -256,7 +256,7 @@
   }
 }
 
-/* ── Vision & Mission ──────────────────────── */
+
 .about-vision {
   padding: 5rem 0;
   background-color: var(--white);
@@ -396,7 +396,7 @@
   overflow: hidden;
 }
 
-/* ── Team Section ──────────────────────────── */
+
 .about-team {
   padding: 5rem 0;
   background-color: var(--cream);
@@ -537,7 +537,7 @@
   margin: 0;
 }
 
-/* ── Milestones / Timeline ─────────────────── */
+
 .about-milestones {
   padding: 5rem 0;
   background-color: var(--white);
@@ -645,7 +645,7 @@
   font-weight: 500;
 }
 
-/* ── CTA Banner ────────────────────────────── */
+
 .about-cta {
   background: var(--primary-color);
   padding: 4.5rem 0;
@@ -735,7 +735,7 @@
   background: rgba(255, 255, 255, 0.07);
 }
 
-/* ── Map embed & open button ───────────────── */
+
 .story-img-main {
   position: relative;
 }
@@ -781,7 +781,7 @@
   color: var(--primary-color);
 }
 
-/* ── Scroll reveal helper ──────────────────── */
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);

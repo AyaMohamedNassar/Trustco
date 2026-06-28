@@ -365,7 +365,7 @@ img {
   }
 }
 
-/* Mobile mega menu styles */
+
 @media (max-width: 991.98px) {
   .has-mega-menu .mega-menu {
     position: static !important;
@@ -388,13 +388,13 @@ img {
   }
 }
 
-/* Smooth transition for mega menu on mobile */
+
 @media (max-width: 991.98px) {
   .has-mega-menu .mega-menu {
     transition: all 0.3s ease;
   }
 
-  /* Optional: Add backdrop overlay when mega menu is open */
+  
   .has-mega-menu.open::after {
     content: "";
     position: fixed;
@@ -528,7 +528,7 @@ img {
   grid-template-columns: 1fr 1fr;
   max-height: fit-content;
   background: var(--cream);
-  /* light cream background */
+  
   overflow: hidden;
   position: relative;
   padding: 2rem 0;
@@ -538,9 +538,9 @@ img {
   display: none;
 }
 
-/* remove old texture overlay */
 
-/* ── Text Panel (RIGHT side in RTL — natural grid flow) ── */
+
+
 .hero-text-panel {
   display: flex;
   flex-direction: column;
@@ -554,7 +554,7 @@ img {
   align-items: center;
   gap: 8px;
   background: var(--primary-color);
-  /* solid navy pill */
+  
   color: var(--cream);
   border: none;
   border-radius: 999px;
@@ -575,7 +575,7 @@ img {
   font-size: clamp(2.4rem, 4vw, 3.8rem);
   font-weight: 700;
   color: var(--primary-color);
-  /* dark navy first line */
+  
   line-height: 1.2;
   margin-bottom: 0;
   animation: fadeSlideIn 0.7s 0.12s ease both;
@@ -584,11 +584,11 @@ img {
 .hero-heading em {
   font-style: normal;
   color: var(--secondary-color);
-  /* gold second line */
+  
   display: block;
 }
 
-/* gold accent underline bar */
+
 .hero-heading::after {
   content: "";
   display: block;
@@ -602,7 +602,7 @@ img {
 
 .hero-desc {
   color: var(--text-light);
-  /* muted gray body text */
+  
   font-size: 1.125rem;
   line-height: 1.9;
   font-weight: 500;
@@ -611,7 +611,7 @@ img {
   animation: fadeSlideIn 0.7s 0.22s ease both;
 }
 
-/* CTA row — buttons come BEFORE stats per screenshot */
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -621,7 +621,7 @@ img {
   animation: fadeSlideIn 0.7s 0.32s ease both;
 }
 
-/* Primary button — navy filled */
+
 .hero-actions .hero-btn {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
@@ -640,7 +640,7 @@ img {
   box-shadow: 0 6px 20px rgba(24, 41, 89, 0.35);
 }
 
-/* Secondary button — navy outlined */
+
 .hero-link {
   display: inline-flex;
   align-items: center;
@@ -661,7 +661,7 @@ img {
   color: var(--cream);
 }
 
-/* Stats row */
+
 .hero-stats {
   display: flex;
   align-items: center;
@@ -680,14 +680,14 @@ img {
   font-size: 1.75rem;
   font-weight: 800;
   color: var(--primary-color);
-  /* dark navy numbers */
+  
   line-height: 1;
 }
 
 .hero-stat-label {
   font-size: 0.8rem;
   color: var(--text-light);
-  /* muted labels */
+  
   font-weight: 500;
 }
 
@@ -706,7 +706,7 @@ img {
   background: var(--cream);
 }
 
-/* remove the divider line pseudo */
+
 .hero-visual-panel::before {
   display: none;
 }
@@ -718,12 +718,12 @@ img {
   max-width: 90%;
 }
 
-/* Dark navy rounded card background behind image */
+
 .hero-img-ring {
   position: absolute;
   inset: 50px 30px;
   border-radius: 24px;
-  /* rounded rectangle, not circle */
+  
   overflow: hidden;
   background: var(--dark-navy);
   border: none;
@@ -759,12 +759,12 @@ img {
   opacity: 1;
 }
 
-/* Remove spinning deco ring */
+
 .hero-deco-ring {
   display: none;
 }
 
-/* Floating label chips — white cards with shadow */
+
 .hero-float {
   position: absolute;
   display: flex;
@@ -793,7 +793,7 @@ img {
   margin-top: 2px;
 }
 
-/* icon row inside chip */
+
 .hero-float i {
   color: var(--primary-color);
   font-size: 1rem;
@@ -802,7 +802,7 @@ img {
   padding: 6px;
 }
 
-/* chip positions — spread around the card */
+
 .hero-float--top-right {
   top: 2%;
   left: -9%;
@@ -902,7 +902,7 @@ img {
   color: var(--text);
 }
 
-/* ── Animations ── */
+
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
@@ -957,7 +957,7 @@ img {
   }
 }
 
-/* ── Responsive ── */
+
 @media (max-width: 991.98px) {
   .hero-split {
     grid-template-columns: 1fr;
@@ -1418,7 +1418,7 @@ img {
   position: relative;
 }
 
-/* subtle radial glow behind the active card */
+
 .customer-reviews::before {
   content: "";
   position: absolute;
@@ -1433,7 +1433,7 @@ img {
   pointer-events: none;
 }
 
-/* ── Header ─────────────────────────────────── */
+
 .cr-header {
   margin-bottom: 3rem;
 }
@@ -1470,7 +1470,7 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/* Overall rating pill */
+
 .cr-summary {
   display: inline-flex;
   align-items: center;
@@ -1508,14 +1508,14 @@ img {
   color: var(--primary-color);
 }
 
-/* ── Stage wrapper ───────────────────────────── */
+
 .cr-stage-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Stage: clips the side cards */
+
 .cr-stage {
   width: 100%;
   position: relative;
@@ -1525,13 +1525,13 @@ img {
   overflow: hidden;
 }
 
-/* Track: absolutely fills stage */
+
 .cr-track {
   position: absolute;
   inset: 0;
 }
 
-/* Each card slot: absolute, offset set by JS via --offset */
+
 .cr-slot {
   position: absolute;
   top: 0;
@@ -1553,7 +1553,7 @@ img {
   }
 }
 
-/* ── Card ────────────────────────────────────── */
+
 .cr-card {
   background: var(--white);
   border: 1px solid var(--border-color);
@@ -1564,14 +1564,14 @@ img {
   flex-direction: column;
   gap: 0.85rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-  /* JS drives transform/opacity/filter */
+  
   will-change: transform, opacity, filter;
   user-select: none;
   position: relative;
   overflow: hidden;
 }
 
-/* gold top accent line — only on active */
+
 .cr-card::before {
   content: "";
   position: absolute;
@@ -1589,7 +1589,7 @@ img {
   opacity: 1;
 }
 
-/* ── Card top row ─────────────────────────────── */
+
 .cr-card-top {
   display: flex;
   align-items: center;
@@ -1622,7 +1622,7 @@ img {
   font-size: 0.7rem;
 }
 
-/* ── Quote ───────────────────────────────────── */
+
 .cr-quote {
   font-size: 1rem;
   line-height: 1.7;
@@ -1659,7 +1659,7 @@ img {
   opacity: 0.7;
 }
 
-/* ── Service tag ─────────────────────────────── */
+
 .cr-service-tag {
   display: inline-flex;
   align-items: center;
@@ -1677,7 +1677,7 @@ img {
   font-size: 0.65rem;
 }
 
-/* ── Author row ──────────────────────────────── */
+
 .cr-author {
   display: flex;
   align-items: center;
@@ -1759,7 +1759,7 @@ img {
   font-size: 0.65rem;
 }
 
-/* ── Active name label below stage ───────────── */
+
 .cr-active-name {
   font-size: 1.1rem;
   font-weight: 700;
@@ -1769,7 +1769,7 @@ img {
   min-height: 1.5rem;
 }
 
-/* ── Controls ─────────────────────────────────── */
+
 .cr-controls {
   display: flex;
   align-items: center;
@@ -1843,7 +1843,7 @@ img {
   background: var(--primary-color);
 }
 
-/* ── Autoplay progress bar on active card ─────── */
+
 .cr-card.cr-is-active .cr-progress {
   display: block;
 }
@@ -2400,7 +2400,7 @@ footer .line .info span {
   }
 }
 
-/* ===== Clients Section ===== */
+
 .clients-section {
   padding: 5rem 0;
   background-color: var(--cream);

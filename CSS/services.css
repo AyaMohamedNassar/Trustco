@@ -1,9 +1,6 @@
-/* =============================================
-   SERVICES PAGE — services.css
-   Trustco | للستائر والديكور
-   ============================================= */
 
-/* ── Page Hero ─────────────────────────────── */
+
+
 .services-hero {
   position: relative;
   background-color: var(--primary-color);
@@ -67,7 +64,7 @@
   line-height: 1.85;
 }
 
-/* ── Category Filter Tabs ──────────────────── */
+
 .services-filter {
   background: var(--cream);
   border-bottom: 1px solid var(--border-color);
@@ -119,7 +116,7 @@
   font-size: 0.78rem;
 }
 
-/* ── Services Grid ─────────────────────────── */
+
 .services-grid-section {
   padding: 4.5rem 0 5rem;
   background-color: var(--cream);
@@ -156,7 +153,7 @@
   font-weight: 500;
 }
 
-/* Service category groups */
+
 .service-category {
   margin-bottom: 4rem;
 }
@@ -199,7 +196,7 @@
   margin-right: 0.5rem;
 }
 
-/* Service Card */
+
 .service-card {
   background: var(--white);
   border-radius: 18px;
@@ -238,7 +235,7 @@
   transform: scale(1.05);
 }
 
-/* flash animation on hover (same as index) */
+
 .service-card .card-img-wrap::before {
   content: "";
   position: absolute;
@@ -256,7 +253,7 @@
   animation: flashing 0.7s;
 }
 
-/* badge on image */
+
 .service-card .card-badge {
   position: absolute;
   top: 0.85rem;
@@ -276,7 +273,7 @@
   color: var(--primary-color);
 }
 
-/* card body */
+
 .service-card .svc-body {
   padding: 1.25rem 1.25rem 0;
   flex: 1;
@@ -297,7 +294,7 @@
   margin: 0;
 }
 
-/* card features list */
+
 .service-card .svc-features {
   display: flex;
   flex-direction: column;
@@ -469,7 +466,7 @@
   position: relative;
 }
 
-/* connecting line between steps on desktop */
+
 @media (min-width: 768px) {
   .process-steps::before {
     content: "";

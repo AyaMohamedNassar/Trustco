@@ -1,4 +1,4 @@
-// ── Scroll reveal ──────────────────────────
+
 (function () {
   const revealEls = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver(
@@ -15,7 +15,7 @@
   revealEls.forEach((el) => observer.observe(el));
 })();
 
-// ── Category filter tabs ───────────────────
+
 (function () {
   const tabs = document.querySelectorAll(".filter-tab");
   const categories = document.querySelectorAll(".service-category");
@@ -35,7 +35,7 @@
         }
       });
 
-      // Defer scroll until after display changes are processed to avoid forced reflow
+      
       requestAnimationFrame(() => {
         document
           .querySelector(".services-grid-section")

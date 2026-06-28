@@ -22,11 +22,11 @@ define('SMTP_USER',       $_ENV['SMTP_USER']);
 define('SMTP_PASS',       $_ENV['SMTP_PASS']);
 define('SMTP_FROM_EMAIL', $_ENV['SMTP_FROM_EMAIL']);
 define('ALLOWED_ORIGIN',  $_ENV['ALLOWED_ORIGIN']);
-// ──────────────────────────────────────────────────────────────────────────
+
 
 header('Content-Type: application/json; charset=utf-8');
 
-// ── CORS ──────────────────────────────────────────────────────────────────
+
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if ($origin === ALLOWED_ORIGIN || strpos($origin, 'github.io') !== false) {
     header('Access-Control-Allow-Origin: ' . $origin);
@@ -39,32 +39,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// ── Method guard ──────────────────────────────────────────────────────────
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => 'Method not allowed']);
     exit;
 }
 
-// ── Parse body ────────────────────────────────────────────────────────────
+
 $raw  = file_get_contents('php://input');
 $data = json_decode($raw, true);
 
-// Also accept regular form POST
+
 if (!$data) {
     $data = $_POST;
 }
 
-// ── Honeypot check (bot trap) ─────────────────────────────────────────
+
 $honeypot = trim($data['website_url'] ?? '');
 if ($honeypot !== '') {
-    // Likely a bot — return fake success so it doesn't retry
+    
     http_response_code(200);
     echo json_encode(['success' => true, 'message' => 'تم إرسال رسالتك بنجاح']);
     exit;
 }
 
-// ── Validate ──────────────────────────────────────────────────────────────
+
 $name    = trim($data['from_name']  ?? '');
 $email   = trim($data['from_email'] ?? '');
 $message = trim($data['message']    ?? '');
@@ -82,17 +82,17 @@ if ($errors) {
     exit;
 }
 
-// ── Sanitize ──────────────────────────────────────────────────────────────
+
 $name    = htmlspecialchars($name,    ENT_QUOTES, 'UTF-8');
 $email   = htmlspecialchars($email,   ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 
-// ── Rate limiting (simple file-based) ─────────────────────────────────────
+
 $ip       = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $ratefile = sys_get_temp_dir() . '/trustco_rl_' . md5($ip) . '.txt';
 $now      = time();
-$window   = 300;   // 5 minutes
-$limit    = 3;     // max 3 submissions per window per IP
+$window   = 300;   
+$limit    = 3;     
 
 $timestamps = [];
 if (file_exists($ratefile)) {
@@ -119,7 +119,7 @@ use PHPMailer\PHPMailer\Exception;
 $mail = new PHPMailer(true);
 
 try {
-    // Server settings
+    
     $mail->isSMTP();
     $mail->Host       = SMTP_HOST;
     $mail->SMTPAuth   = true;
@@ -129,12 +129,12 @@ try {
     $mail->Port       = SMTP_PORT;
     $mail->CharSet    = 'UTF-8';
 
-    // Recipients
+    
     $mail->setFrom(SMTP_FROM_EMAIL, RECIPIENT_NAME);
     $mail->addAddress(RECIPIENT_EMAIL, RECIPIENT_NAME);;
     $mail->addReplyTo($email, $name);
 
-    // Content
+    
     $mail->isHTML(true);
     $mail->Subject = "رسالة جديدة من موقع مصنع الثقة — {$name}";
     $mail->Body    = "

@@ -20,7 +20,7 @@
 
   if (!lightbox || !lbImg || !lbDownload || !lbClose) return;
 
-  // Make every image in the page clickable (except logo & carousel nav)
+  
   const images = document.querySelectorAll(
     "img:not(.navbar-brand img):not(.carousel-item img):not(.mega-menu img)"
   );
@@ -34,7 +34,7 @@
     lbImg.src = src;
     lbImg.alt = alt || "";
     lbDownload.href = src;
-    // Extract filename from path for the download attribute
+    
     const filename = src.split("/").pop() || "image";
     lbDownload.setAttribute("download", filename);
     lightbox.classList.add("is-open");

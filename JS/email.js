@@ -3,12 +3,12 @@
 
   const MAIL_ENDPOINT = "../send-mail.php";
 
-  // ── Rate-limit config (client-side layer) ──────────────────────────────
-  const RATE_WINDOW_MS = 5 * 60 * 1000; // 5 minutes
+  
+  const RATE_WINDOW_MS = 5 * 60 * 1000; 
   const RATE_MAX = 3;
   const RL_KEY = "trustco_rl";
 
-  // ── DOM refs ────────────────────────────────────────────────────────────
+  
   const form = document.getElementById("contact-form");
   const btnSend = document.getElementById("btn-send");
   const alertBox = document.getElementById("form-alert");
@@ -21,12 +21,9 @@
   const errorEmail = document.getElementById("error-email");
   const errorMsg = document.getElementById("error-message");
 
-  // ── Helpers ─────────────────────────────────────────────────────────────
+  
 
-  /**
-   * Sanitise a string for safe display — strips HTML/script tags to prevent
-   * reflected XSS when the value is echoed back in alert messages.
-   */
+  
   function sanitize(str) {
     return str.replace(/[<>"'&]/g, function (ch) {
       return {
@@ -39,9 +36,7 @@
     });
   }
 
-  /**
-   * Show a form-level banner alert (success / error).
-   */
+  
   function showAlert(message, type) {
     alertBox.textContent = message;
     alertBox.className = "form-alert form-alert--" + type;
@@ -55,9 +50,7 @@
     }
   }
 
-  /**
-   * Set or clear an inline field-level error.
-   */
+  
   function setFieldError(input, errorSpan, message) {
     if (message) {
       input.classList.add("is-invalid");
@@ -70,16 +63,14 @@
     }
   }
 
-  /**
-   * Clear all per-field errors.
-   */
+  
   function clearFieldErrors() {
     setFieldError(fieldName, errorName, "");
     setFieldError(fieldEmail, errorEmail, "");
     setFieldError(fieldMsg, errorMsg, "");
   }
 
-  // ── Validation rules ───────────────────────────────────────────────────
+  
 
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const NAME_RE = /^[\u0600-\u06FFa-zA-Z\s.'\-]+$/;
@@ -155,19 +146,19 @@
   }
 
   function validateAll() {
-    // Run all so every field shows its error simultaneously
+    
     var a = validateName();
     var b = validateEmail();
     var c = validateMessage();
     return a && b && c;
   }
 
-  // ── Real-time (blur) validation ────────────────────────────────────────
+  
   fieldName.addEventListener("blur", validateName);
   fieldEmail.addEventListener("blur", validateEmail);
   fieldMsg.addEventListener("blur", validateMessage);
 
-  // Clear individual error on input so user sees immediate feedback
+  
   fieldName.addEventListener("input", function () {
     if (fieldName.classList.contains("is-invalid")) validateName();
   });
@@ -178,14 +169,14 @@
     if (fieldMsg.classList.contains("is-invalid")) validateMessage();
   });
 
-  // ── Client-side rate limiter ───────────────────────────────────────────
+  
 
   function isRateLimited() {
     try {
       var raw = localStorage.getItem(RL_KEY);
       var timestamps = raw ? JSON.parse(raw) : [];
       var now = Date.now();
-      // Keep only timestamps within window
+      
       timestamps = timestamps.filter(function (t) {
         return now - t < RATE_WINDOW_MS;
       });
@@ -194,36 +185,36 @@
       localStorage.setItem(RL_KEY, JSON.stringify(timestamps));
       return false;
     } catch (e) {
-      // localStorage unavailable — allow the request (server handles it)
+      
       return false;
     }
   }
 
-  // ── Submit handler ─────────────────────────────────────────────────────
+  
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    // Hide any prior alert
+    
     alertBox.style.display = "none";
 
-    // ── Honeypot check ──────────────────────────────────────────────────
+    
     if (honeypot && honeypot.value) {
-      // Silently reject — likely a bot
+      
       showAlert("تم إرسال رسالتك بنجاح! ✓", "success");
       form.reset();
       return;
     }
 
-    // ── Validate ────────────────────────────────────────────────────────
+    
     if (!validateAll()) {
-      // Focus the first invalid field
+      
       var firstInvalid = form.querySelector(".is-invalid");
       if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    // ── Rate limit ──────────────────────────────────────────────────────
+    
     if (isRateLimited()) {
       showAlert(
         "يرجى الانتظار قبل إرسال رسالة أخرى. حاول مرة أخرى خلال 5 دقائق.",
@@ -232,7 +223,7 @@
       return;
     }
 
-    // ── Send ─────────────────────────────────────────────────────────────
+    
     btnSend.disabled = true;
     btnSend.classList.add("is-loading");
 
