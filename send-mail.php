@@ -55,15 +55,26 @@ if (!$data) {
     $data = $_POST;
 }
 
+// ── Honeypot check (bot trap) ─────────────────────────────────────────
+$honeypot = trim($data['website_url'] ?? '');
+if ($honeypot !== '') {
+    // Likely a bot — return fake success so it doesn't retry
+    http_response_code(200);
+    echo json_encode(['success' => true, 'message' => 'تم إرسال رسالتك بنجاح']);
+    exit;
+}
+
 // ── Validate ──────────────────────────────────────────────────────────────
 $name    = trim($data['from_name']  ?? '');
 $email   = trim($data['from_email'] ?? '');
 $message = trim($data['message']    ?? '');
 
 $errors = [];
-if (!$name)                            $errors[] = 'الاسم مطلوب';
-if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'البريد الإلكتروني غير صحيح';
-if (!$message)                         $errors[] = 'الرسالة مطلوبة';
+if (!$name || mb_strlen($name) < 2 || mb_strlen($name) > 100) $errors[] = 'الاسم مطلوب (2-100 حرف)';
+if (!preg_match('/^[\x{0600}-\x{06FF}a-zA-Z\s.\'-]+$/u', $name))   $errors[] = 'الاسم يحتوي على أحرف غير مسموحة';
+if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 254) $errors[] = 'البريد الإلكتروني غير صحيح';
+if (!$message || mb_strlen($message) < 10)                 $errors[] = 'الرسالة مطلوبة (10 أحرف على الأقل)';
+if (mb_strlen($message) > 2000)                            $errors[] = 'الرسالة طويلة جدًا (الحد الأقصى 2000 حرف)';
 
 if ($errors) {
     http_response_code(422);

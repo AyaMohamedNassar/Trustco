@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+    />
     <title>تواصل معنا - مصنع الثقة</title>
     <meta
       name="description"
@@ -146,36 +150,66 @@
             <h3 class="form-heading">اترك استفسارك</h3>
             <p class="form-sub">سنرد عليك خلال 24 ساعة</p>
 
-            <div id="form-alert" style="display: none"></div>
+            <form id="contact-form" novalidate autocomplete="on">
+              <div id="form-alert" style="display: none"></div>
 
-            <div class="field-row">
-              <div class="field-group">
-                <label for="sender-name">الاسم</label>
-                <input id="sender-name" type="text" placeholder="اسمك الكامل" />
+              <!-- Honeypot anti-spam field — hidden from real users -->
+              <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden">
+                <label for="website-url">اتركه فارغًا</label>
+                <input type="text" id="website-url" name="website_url" tabindex="-1" autocomplete="off" />
               </div>
-              <div class="field-group">
-                <label for="sender-email">البريد الالكتروني</label>
-                <input
-                  id="sender-email"
-                  type="email"
-                  placeholder="example@email.com"
-                />
+
+              <div class="field-row">
+                <div class="field-group">
+                  <label for="sender-name">الاسم</label>
+                  <input
+                    id="sender-name"
+                    name="from_name"
+                    type="text"
+                    placeholder="اسمك الكامل"
+                    required
+                    minlength="2"
+                    maxlength="100"
+                    pattern="^[\u0600-\u06FFa-zA-Z\s.'-]+$"
+                    autocomplete="name"
+                  />
+                  <span class="field-error" id="error-name"></span>
+                </div>
+                <div class="field-group">
+                  <label for="sender-email">البريد الالكتروني</label>
+                  <input
+                    id="sender-email"
+                    name="from_email"
+                    type="email"
+                    placeholder="example@email.com"
+                    required
+                    maxlength="254"
+                    autocomplete="email"
+                    dir="ltr"
+                  />
+                  <span class="field-error" id="error-email"></span>
+                </div>
               </div>
-            </div>
 
-            <div class="field-group">
-              <label for="sender-message">الرسالة</label>
-              <textarea
-                id="sender-message"
-                placeholder="اكتب رسالتك هنا..."
-              ></textarea>
-            </div>
+              <div class="field-group">
+                <label for="sender-message">الرسالة</label>
+                <textarea
+                  id="sender-message"
+                  name="message"
+                  placeholder="اكتب رسالتك هنا..."
+                  required
+                  minlength="10"
+                  maxlength="2000"
+                ></textarea>
+                <span class="field-error" id="error-message"></span>
+              </div>
 
-            <button id="btn-send" class="btn-send" type="button">
-              <span class="btn-dot"></span>
-              إرسال الرسالة
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
+              <button id="btn-send" class="btn-send" type="submit">
+                <span class="btn-dot"></span>
+                إرسال الرسالة
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
           </div>
         </div>
       </section>
