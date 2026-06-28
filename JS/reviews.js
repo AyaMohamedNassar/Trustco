@@ -23,6 +23,21 @@
   let autoTimer = null;
   let isPaused = false;
 
+  /* ── IntersectionObserver for visibility check (replaces getBoundingClientRect) */
+  let isSectionVisible = false;
+  const section = document.getElementById("reviews");
+  if (section) {
+    const visObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isSectionVisible = entry.isIntersecting;
+        });
+      },
+      { threshold: 0 }
+    );
+    visObs.observe(section);
+  }
+
   /* ── Build dots ─────────────────────────── */
   dotsWrap.innerHTML = "";
   slots.forEach((_, i) => {
@@ -36,61 +51,54 @@
   const dots = Array.from(dotsWrap.querySelectorAll(".cr-dot"));
 
   /* ── Layout calc ─────────────────────────── */
-  function getOffset(slotIndex, activeIndex) {
-    // distance in card-widths from active
-    const diff = slotIndex - activeIndex;
-    return diff * (CARD_WIDTH + CARD_GAP);
-  }
-
   function applyLayout(idx, animate) {
-    slots.forEach((slot, i) => {
-      const card = slot.querySelector(".cr-card");
-      const diff = i - idx;
-      const absDiff = Math.abs(diff);
+    // Batch all style writes together to avoid interleaved read/write reflows
+    requestAnimationFrame(() => {
+      slots.forEach((slot, i) => {
+        const card = slot.querySelector(".cr-card");
+        const diff = i - idx;
+        const absDiff = Math.abs(diff);
 
-      // position
-      const offset = diff * (CARD_WIDTH + CARD_GAP);
-      slot.style.setProperty("--offset", offset + "px");
-      if (animate) {
-        slot.style.transition = `left 0.7s ${EASING}`;
-      } else {
-        slot.style.transition = "none";
-      }
+        // position
+        const offset = diff * (CARD_WIDTH + CARD_GAP);
+        slot.style.setProperty("--offset", offset + "px");
+        slot.style.transition = animate
+          ? `left 0.7s ${EASING}`
+          : "none";
 
-      // active / inactive state
-      const isActive = i === idx;
-      card.classList.toggle("cr-is-active", isActive);
+        // active / inactive state
+        const isActive = i === idx;
+        card.classList.toggle("cr-is-active", isActive);
 
-      // scale + opacity + blur via CSS vars — driven by JS
-      let scale = isActive ? 1 : absDiff === 1 ? 0.85 : 0.72;
-      let opacity = isActive ? 1 : absDiff === 1 ? 0.5 : 0.3;
-      let blur = isActive ? 0 : absDiff === 1 ? 2 : 4;
-      let zIndex = isActive ? 10 : absDiff === 1 ? 5 : 1;
+        // scale + opacity + blur via CSS vars — driven by JS
+        const scale = isActive ? 1 : absDiff === 1 ? 0.85 : 0.72;
+        const opacity = isActive ? 1 : absDiff === 1 ? 0.5 : 0.3;
+        const blur = isActive ? 0 : absDiff === 1 ? 2 : 4;
+        const zIndex = isActive ? 10 : absDiff === 1 ? 5 : 1;
 
-      card.style.transform = `scale(${scale})`;
-      card.style.opacity = opacity;
-      card.style.filter = blur > 0 ? `blur(${blur}px)` : "none";
-      card.style.zIndex = zIndex;
-      if (animate) {
-        card.style.transition = `transform 0.7s ${EASING}, opacity 0.5s ease, filter 0.5s ease`;
-      } else {
-        card.style.transition = "none";
-      }
+        card.style.transform = `scale(${scale})`;
+        card.style.opacity = opacity;
+        card.style.filter = blur > 0 ? `blur(${blur}px)` : "none";
+        card.style.zIndex = zIndex;
+        card.style.transition = animate
+          ? `transform 0.7s ${EASING}, opacity 0.5s ease, filter 0.5s ease`
+          : "none";
+      });
+
+      // update dots
+      dots.forEach((d, i) => d.classList.toggle("active", i === idx));
+
+      // update name label
+      const activeCard = cards[idx];
+      const name = activeCard
+        ? activeCard.querySelector(".cr-name")?.textContent || ""
+        : "";
+      if (activeName) activeName.textContent = name;
+
+      // update nav buttons
+      btnPrev.disabled = false;
+      btnNext.disabled = false;
     });
-
-    // update dots
-    dots.forEach((d, i) => d.classList.toggle("active", i === idx));
-
-    // update name label
-    const activeCard = cards[idx];
-    const name = activeCard
-      ? activeCard.querySelector(".cr-name")?.textContent || ""
-      : "";
-    if (activeName) activeName.textContent = name;
-
-    // update nav buttons
-    btnPrev.disabled = false;
-    btnNext.disabled = false;
   }
 
   /* ── Navigation ─────────────────────────── */
@@ -149,11 +157,8 @@
 
   /* ── Keyboard ────────────────────────────── */
   document.addEventListener("keydown", (e) => {
-    // only act when reviews section is in viewport
-    const section = document.getElementById("reviews");
-    if (!section) return;
-    const rect = section.getBoundingClientRect();
-    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    // Use cached IntersectionObserver flag instead of forced reflow
+    if (!isSectionVisible) return;
 
     if (e.key === "ArrowRight") prev();
     if (e.key === "ArrowLeft") next();
@@ -201,3 +206,4 @@
     resizeTimer = setTimeout(() => applyLayout(current, false), 150);
   });
 })();
+

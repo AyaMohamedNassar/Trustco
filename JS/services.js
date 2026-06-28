@@ -35,9 +35,12 @@
         }
       });
 
-      document
-        .querySelector(".services-grid-section")
-        .scrollIntoView({ behavior: "smooth", block: "start" });
+      // Defer scroll until after display changes are processed to avoid forced reflow
+      requestAnimationFrame(() => {
+        document
+          .querySelector(".services-grid-section")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     });
   });
 })();

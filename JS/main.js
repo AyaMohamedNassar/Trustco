@@ -36,13 +36,17 @@
     const filename = src.split("/").pop() || "image";
     lbDownload.setAttribute("download", filename);
     lightbox.classList.add("is-open");
-    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => {
+      document.body.style.overflow = "hidden";
+    });
   }
 
   function closeLightbox() {
     lightbox.classList.remove("is-open");
-    document.body.style.overflow = "";
     lbImg.src = "";
+    requestAnimationFrame(() => {
+      document.body.style.overflow = "";
+    });
   }
 
   lbClose.addEventListener("click", closeLightbox);
