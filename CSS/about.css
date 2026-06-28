@@ -516,7 +516,7 @@
   min-height: 320px;
 }
 
-.team-card h4 {
+.team-card h3 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
@@ -631,7 +631,7 @@
   margin-bottom: 0.5rem;
 }
 
-.timeline-content h4 {
+.timeline-content h3 {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
