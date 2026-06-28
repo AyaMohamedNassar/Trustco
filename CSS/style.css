@@ -336,11 +336,20 @@ img {
   border-color: var(--primary-color) !important;
   transition: var(--main-transition);
   font-weight: 600;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
 }
 .btn-primary a {
   color: var(--cream);
   transition: var(--main-transition);
-  padding: 0.25rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  text-decoration: none;
 }
 .btn-primary:hover a {
   color: var(--primary-color) !important;
