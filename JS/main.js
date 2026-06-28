@@ -18,6 +18,8 @@
   const lbDownload = document.getElementById("lightbox-download");
   const lbClose = document.getElementById("lightbox-close");
 
+  if (!lightbox || !lbImg || !lbDownload || !lbClose) return;
+
   // Make every image in the page clickable (except logo & carousel nav)
   const images = document.querySelectorAll(
     "img:not(.navbar-brand img):not(.carousel-item img):not(.mega-menu img)"
@@ -51,12 +53,10 @@
 
   lbClose.addEventListener("click", closeLightbox);
 
-  // Close when clicking outside the image
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  // Close on Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
       closeLightbox();
