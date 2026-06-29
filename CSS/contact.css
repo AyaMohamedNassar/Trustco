@@ -231,7 +231,6 @@
   font-family: "Cairo", sans-serif;
   font-size: 14px;
   color: var(--text);
-  direction: rtl;
   outline: none;
   transition:
     border-color var(--main-transition),
