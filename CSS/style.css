@@ -215,6 +215,9 @@ img {
 @media (max-width: 991.98px) {
   .navbar .navbar-nav {
     padding: 1rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 16px;
   }
 
   .navbar .nav-link {
@@ -235,12 +238,12 @@ img {
   min-height: 44px;
   min-width: 44px;
   transition: var(--main-transition);
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.625rem 1.5rem;
   display: block;
   margin: auto;
+  margin-bottom: 16px;
 }
 
 .btn-primary:hover {
