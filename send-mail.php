@@ -131,7 +131,7 @@ try {
 
     
     $mail->setFrom(SMTP_FROM_EMAIL, RECIPIENT_NAME);
-    $mail->addAddress(RECIPIENT_EMAIL, RECIPIENT_NAME);;
+    $mail->addAddress(RECIPIENT_EMAIL, RECIPIENT_NAME);
     $mail->addReplyTo($email, $name);
 
     

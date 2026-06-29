@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const MAIL_ENDPOINT = "../send-mail.php";
+   const MAIL_ENDPOINT = "../Trustco/send-mail.php";
 
   
   const RATE_WINDOW_MS = 5 * 60 * 1000; 
