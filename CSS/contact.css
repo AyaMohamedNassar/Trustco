@@ -9,21 +9,10 @@
   padding: 60px 80px;
   position: relative;
 }
-
-.contact-btn {
-  position: absolute;
-  top: 36px;
-  left: 60px;
-  background: var(--gold);
-  color: var(--white);
-  font-family: 'Tajawal', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 8px 22px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.3px;
+@media (max-width: 780px) {
+  .contact-section {
+    padding: 40px 20px;
+  }
 }
 
 .section-content {
@@ -39,6 +28,11 @@
   line-height: 1.2;
 }
 
+@media (max-width: 780px) {
+  .section-content h2 {
+    font-size: 36px;
+  }
+}
 .section-content h2 span {
   color: var(--gold);
 }
