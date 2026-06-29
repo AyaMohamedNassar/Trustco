@@ -1,14 +1,12 @@
 (function () {
   "use strict";
 
-   const MAIL_ENDPOINT = "../Trustco/send-mail.php";
+  const MAIL_ENDPOINT = "../Trustco/send-mail.php";
 
-  
-  const RATE_WINDOW_MS = 5 * 60 * 1000; 
+  const RATE_WINDOW_MS = 5 * 60 * 1000;
   const RATE_MAX = 3;
   const RL_KEY = "trustco_rl";
 
-  
   const form = document.getElementById("contact-form");
   const btnSend = document.getElementById("btn-send");
   const alertBox = document.getElementById("form-alert");
@@ -21,9 +19,6 @@
   const errorEmail = document.getElementById("error-email");
   const errorMsg = document.getElementById("error-message");
 
-  
-
-  
   function sanitize(str) {
     return str.replace(/[<>"'&]/g, function (ch) {
       return {
@@ -36,7 +31,6 @@
     });
   }
 
-  
   function showAlert(message, type) {
     alertBox.textContent = message;
     alertBox.className = "form-alert form-alert--" + type;
@@ -50,7 +44,6 @@
     }
   }
 
-  
   function setFieldError(input, errorSpan, message) {
     if (message) {
       input.classList.add("is-invalid");
@@ -63,14 +56,11 @@
     }
   }
 
-  
   function clearFieldErrors() {
     setFieldError(fieldName, errorName, "");
     setFieldError(fieldEmail, errorEmail, "");
     setFieldError(fieldMsg, errorMsg, "");
   }
-
-  
 
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const NAME_RE = /^[\u0600-\u06FFa-zA-Z\s.'\-]+$/;
@@ -93,7 +83,7 @@
       setFieldError(
         fieldName,
         errorName,
-        "الاسم يجب أن يحتوي على أحرف فقط (عربية أو إنجليزية)."
+        "الاسم يجب أن يحتوي على أحرف فقط (عربية أو إنجليزية).",
       );
       return false;
     }
@@ -112,11 +102,7 @@
       return false;
     }
     if (!EMAIL_RE.test(email)) {
-      setFieldError(
-        fieldEmail,
-        errorEmail,
-        "يرجى إدخال بريد إلكتروني صحيح."
-      );
+      setFieldError(fieldEmail, errorEmail, "يرجى إدخال بريد إلكتروني صحيح.");
       return false;
     }
     setFieldError(fieldEmail, errorEmail, "");
@@ -133,7 +119,7 @@
       setFieldError(
         fieldMsg,
         errorMsg,
-        "الرسالة يجب أن تكون 10 أحرف على الأقل."
+        "الرسالة يجب أن تكون 10 أحرف على الأقل.",
       );
       return false;
     }
@@ -146,19 +132,16 @@
   }
 
   function validateAll() {
-    
     var a = validateName();
     var b = validateEmail();
     var c = validateMessage();
     return a && b && c;
   }
 
-  
   fieldName.addEventListener("blur", validateName);
   fieldEmail.addEventListener("blur", validateEmail);
   fieldMsg.addEventListener("blur", validateMessage);
 
-  
   fieldName.addEventListener("input", function () {
     if (fieldName.classList.contains("is-invalid")) validateName();
   });
@@ -169,14 +152,12 @@
     if (fieldMsg.classList.contains("is-invalid")) validateMessage();
   });
 
-  
-
   function isRateLimited() {
     try {
       var raw = localStorage.getItem(RL_KEY);
       var timestamps = raw ? JSON.parse(raw) : [];
       var now = Date.now();
-      
+
       timestamps = timestamps.filter(function (t) {
         return now - t < RATE_WINDOW_MS;
       });
@@ -185,45 +166,35 @@
       localStorage.setItem(RL_KEY, JSON.stringify(timestamps));
       return false;
     } catch (e) {
-      
       return false;
     }
   }
 
-  
-
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    
     alertBox.style.display = "none";
 
-    
     if (honeypot && honeypot.value) {
-      
       showAlert("تم إرسال رسالتك بنجاح! ✓", "success");
       form.reset();
       return;
     }
 
-    
     if (!validateAll()) {
-      
       var firstInvalid = form.querySelector(".is-invalid");
       if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    
     if (isRateLimited()) {
       showAlert(
         "يرجى الانتظار قبل إرسال رسالة أخرى. حاول مرة أخرى خلال 5 دقائق.",
-        "error"
+        "error",
       );
       return;
     }
 
-    
     btnSend.disabled = true;
     btnSend.classList.add("is-loading");
 
@@ -234,6 +205,10 @@
         body: JSON.stringify({
           from_name: sanitize(fieldName.value.trim()),
           from_email: sanitize(fieldEmail.value.trim()),
+          from_phone: sanitize(
+            document.getElementById("sender-phone").value.trim(),
+          ),
+          service: sanitize(document.getElementById("sender-service").value),
           message: sanitize(fieldMsg.value.trim()),
         }),
       });
@@ -243,22 +218,21 @@
       if (response.ok && data.success) {
         showAlert(
           "تم إرسال رسالتك بنجاح! سنتواصل معك خلال 24 ساعة. ✓",
-          "success"
+          "success",
         );
         form.reset();
         clearFieldErrors();
       } else {
         showAlert(
-          data.message ||
-            "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.",
-          "error"
+          data.message || "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.",
+          "error",
         );
       }
     } catch (err) {
       console.error("Send error:", err);
       showAlert(
         "تعذّر الاتصال بالخادم. يرجى التحقق من اتصالك والمحاولة مرة أخرى.",
-        "error"
+        "error",
       );
     } finally {
       btnSend.disabled = false;

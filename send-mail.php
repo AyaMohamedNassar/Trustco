@@ -67,7 +67,10 @@ if ($honeypot !== '') {
 
 $name    = trim($data['from_name']  ?? '');
 $email   = trim($data['from_email'] ?? '');
+$phone   = trim($data['from_phone'] ?? '');
+$service = trim($data['service']    ?? '');
 $message = trim($data['message']    ?? '');
+
 
 $errors = [];
 if (!$name || mb_strlen($name) < 2 || mb_strlen($name) > 100) $errors[] = 'الاسم مطلوب (2-100 حرف)';
@@ -81,12 +84,20 @@ if ($errors) {
     echo json_encode(['success' => false, 'message' => implode(' | ', $errors)]);
     exit;
 }
+if ($phone && (!preg_match('/^[\+\d\s\-\(\)]{6,20}$/', $phone) || mb_strlen($phone) > 20)) {
+    $errors[] = 'رقم الهاتف غير صحيح';
+}
+$allowed_services = ['تركيب ستائر جديدة','تصليم أبواب أكورديون','استشارة فنية / زيارة موقع','صيانة','أخرى',''];
+if (!in_array($service, $allowed_services, true)) {
+    $service = '';
+}
 
 
 $name    = htmlspecialchars($name,    ENT_QUOTES, 'UTF-8');
 $email   = htmlspecialchars($email,   ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
-
+$phone   = htmlspecialchars($phone,   ENT_QUOTES, 'UTF-8');
+$service = htmlspecialchars($service, ENT_QUOTES, 'UTF-8');
 
 $ip       = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $ratefile = sys_get_temp_dir() . '/trustco_rl_' . md5($ip) . '.txt';
@@ -159,6 +170,14 @@ try {
                 <td style='padding: 10px 0; color: #222;'><a href='mailto:{$email}' style='color:#1a73e8;'>{$email}</a></td>
                 </tr>
                 <tr style='border-top: 1px solid #f0f0f0;'>
+                <td style='padding: 10px 0; color: #888; vertical-align: top;'>رقم الهاتف</td>
+                <td style='padding: 10px 0; color: #222;'>" . ($phone ?: '—') . "</td>
+                </tr>
+                <tr style='border-top: 1px solid #f0f0f0;'>
+                <td style='padding: 10px 0; color: #888; vertical-align: top;'>نوع الخدمة</td>
+                <td style='padding: 10px 0; color: #222;'>" . ($service ?: '—') . "</td>
+                </tr>
+                <tr style='border-top: 1px solid #f0f0f0;'>
                 <td style='padding: 10px 0; color: #888; vertical-align: top;'>الرسالة</td>
                 <td style='padding: 10px 0; color: #222; line-height: 1.7;'>" . nl2br($message) . "</td>
                 </tr>
@@ -171,7 +190,7 @@ try {
         </body>
         </html>";
 
-    $mail->AltBody = "اسم المرسل: {$name}\nالبريد: {$email}\n\nالرسالة:\n{$message}";
+   $mail->AltBody = "اسم المرسل: {$name}\nالبريد: {$email}\nالهاتف: {$phone}\nالخدمة: {$service}\n\nالرسالة:\n{$message}";
 
     $mail->send();
 
