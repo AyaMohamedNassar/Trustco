@@ -4,4 +4,4 @@ Disallow: /PHPMailer/
 Disallow: /send-mail.php
 Disallow: /404.html
 
-Sitemap: https://trustco.com/sitemap.xml
+Sitemap: https://trust-co.net/sitemap.xml
