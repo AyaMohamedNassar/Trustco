@@ -9,6 +9,7 @@
   padding: 60px 80px;
   position: relative;
 }
+
 @media (max-width: 780px) {
   .contact-section {
     padding: 40px 20px;
@@ -33,6 +34,7 @@
     font-size: 36px;
   }
 }
+
 .section-content h2 span {
   color: var(--gold);
 }
@@ -44,6 +46,7 @@
   margin: 0;
   font-weight: 500;
 }
+
 .contact-wrapper {
   width: 100%;
   display: grid;
@@ -282,6 +285,7 @@
 .btn-send:active {
   transform: scale(0.98);
 }
+
 .btn-send i {
   font-size: 15px;
 }
@@ -298,9 +302,11 @@
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
+
   .field-row {
     grid-template-columns: 1fr;
   }
+
   .info-side,
   .form-side {
     padding: 40px 28px;
@@ -316,6 +322,7 @@
   text-align: center;
   display: none;
 }
+
 .honeypot {
   position: absolute;
   left: -9999px;
@@ -324,32 +331,38 @@
   width: 0;
   overflow: hidden;
 }
+
 #form-alert.success {
   background: #eaf6ec;
   color: #1a7a30;
   border: 1px solid #b2dfbb;
 }
+
 #form-alert.error {
   background: #fdecea;
   color: #c0392b;
   border: 1px solid #f5c6c2;
 }
+
 .btn-send:disabled {
   opacity: 0.65;
   cursor: not-allowed;
   transform: none !important;
 }
+
 .form-alert {
   padding: 12px 16px;
   border-radius: 8px;
   margin-bottom: 16px;
   font-size: 14px;
 }
+
 .form-alert--success {
   background: #e1f5ee;
   color: #0f6e56;
   border: 1px solid #5dcaa5;
 }
+
 .form-alert--error {
   background: #fcebeb;
   color: #a32d2d;
@@ -405,7 +418,6 @@
   }
 }
 
-/* Select field RTL arrow fix */
 .field-group select {
   appearance: none;
   -webkit-appearance: none;
@@ -416,7 +428,6 @@
   cursor: pointer;
 }
 
-/* ── FAQ Section ─────────────────────────────────────── */
 .faq-section {
   background: var(--bg-light);
   padding: 80px 0;
@@ -509,6 +520,7 @@
   .faq-grid {
     grid-template-columns: 1fr;
   }
+
   .faq-section {
     padding: 56px 0;
   }
